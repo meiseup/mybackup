@@ -24,3 +24,4 @@ void mysql_clo(MYSQL *mysql)
 {
 	mysql_close(mysql);
 }
+
