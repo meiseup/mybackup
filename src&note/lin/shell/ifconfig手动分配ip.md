@@ -9,7 +9,7 @@ ifconfig -a # Or ip
 2. 给以太网适配器添加一个 IP，手动分配 IP,example：
 ```Bash
 # ifconfig [dev] address [broadcase address] [netmask address]
-ifconfig enp2s0f1 192.168.2.21 broadcast 192.168.2.255 netmask 255.255.255.0
+ifconfig enp2s0f1 192.168.2.21 broadcast 192.168.2.255 netmask 255.255.255.0 up
 ```
 
 3. add default GetWay,example：

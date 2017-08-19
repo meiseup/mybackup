@@ -1,6 +1,0 @@
-#
-$if mode=emacs
-#set show-all-if-unmodified On
-set show-all-if-ambiguous On
-$endif
-#
