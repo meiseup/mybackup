@@ -1,0 +1,29 @@
+## Official Archive Mirrors for Ubuntu
+## https://launchpad.net/ubuntu/+archivemirrors
+
+## Ubuntu mirror "NetEase"
+## Archive information: Official, 1 Gbps, China, Archive
+deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+
+deb-src http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+
+## Uncomment the following two lines to add software from Canonical's
+## 'partner' repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+deb http://archive.canonical.com/ubuntu precise partner
+deb-src http://archive.canonical.com/ubuntu precise partner
+
+## This software is not part of Ubuntu, but is offered by third-party
+## developers who want to ship their latest software.
+deb http://extras.ubuntu.com/ubuntu precise main
+deb-src http://extras.ubuntu.com/ubuntu precise main
+

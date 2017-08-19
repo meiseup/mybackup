@@ -1,0 +1,280 @@
+#1464626984
+sudo mount -t ntfs /dev/disk/by-label/Others /media/Others/
+#1464627002
+mount -t ntfs /dev/disk/by-label/Others /media/Others/
+#1464627020
+mount /dev/disk/by-label/Others /media/Others/
+#1464627408
+sync;sync;sync;sync;sync;sync;sync;umo;cs
+#1464670851
+sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1464670899
+tar -xf master-pdf-editor-3.6.00-qt4.8_amd64.tar.gz -C /media/App/Lin/Others/
+#1464670982
+tar -xf rarlinux-x64-5.3.0.tar.gz -C /media/App/Lin/Others/
+#1464671040
+tar -xf jdk-7u80-linux-x64.tar.gz -C /media/App/Lin/Develop/
+#1464670899
+tar -xf master-pdf-editor-3.6.00-qt4.8_amd64.tar.gz -C /media/App/Lin/Others/
+#1464670982
+tar -xf rarlinux-x64-5.3.0.tar.gz -C /media/App/Lin/Others/
+#1464671040
+tar -xf jdk-7u80-linux-x64.tar.gz -C /media/App/Lin/Develop/
+#1464673021
+　ll
+#1464674540
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464674854
+../src/gmp-6.0.0/configure --prefix=../tools/gmp6.0 
+#1464674876
+../src/gmp-6.0.0/configure --prefix=/media/App/Lin/tools/gmp6.0
+#1464675189
+../src/mpfr-3.1.2/configure --prefix=/media/App/Lin/tools/mpfr-3.1.2 --with-gmp=/media/App/Lin/gmp6.0 
+#1464675278
+../src/mpfr-3.1.2/configure --prefix=/media/App/Lin/tools/mpfr-3.1.2 --with-gmp=/media/App/Lin/tools/gmp6.0
+#1464675442
+../src/mpc-1.0.2/configure --prefix=/media/App/Lin/tools/mpc1.0.2 --with-gmp=/media/App/Lin/tools/gmp6.0 \
+#1464675499
+../src/mpc-1.0.2/configure --prefix=/media/App/Lin/tools/mpc-1.0.2 --with-gmp=/media/App/Lin/tools/gmp6.0 --with-mpfr=/media/App/Lin/tools/mpfr-3.1.2
+#1464675549
+make -j 3
+#1464675559
+make install
+#1464676808
+export LD_LIBRARY_PATH=/media/App/Lin/tools/gmp6.0/lib:/media/App/Lin/tools/mpfr-3.1.2/lib:/media/App/Lin/tools/mpc-1.0.2/lib:$LD_LIBRARY_PATH
+#1464676864
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ --with-gmp=/media/App/Lin/tools/gmp6.0 --with-mpfr=/media/App/Lin/tools/mpfr-3.1.2 --with-mpc=/media/App/Lin/tools/mpc-1.0.2 
+#1464677253
+dnfu
+#1464675278
+../src/mpfr-3.1.2/configure --prefix=/media/App/Lin/tools/mpfr-3.1.2 --with-gmp=/media/App/Lin/tools/gmp6.0
+#1464675442
+../src/mpc-1.0.2/configure --prefix=/media/App/Lin/tools/mpc1.0.2 --with-gmp=/media/App/Lin/tools/gmp6.0 \
+#1464675499
+../src/mpc-1.0.2/configure --prefix=/media/App/Lin/tools/mpc-1.0.2 --with-gmp=/media/App/Lin/tools/gmp6.0 --with-mpfr=/media/App/Lin/tools/mpfr-3.1.2
+#1464675549
+make -j 3
+#1464677253
+dnfu
+#1464678097
+export LD_LIBRARY_PATH=/media/App/Lin/tools/gmp6.0/lib:/media/App/Lin/tools/mpfr-3.1.2/lib:/media/App/Lin/tools/mpc-1.0.2/lib:$LD_LIBRARY_PATH
+#1464678440
+dnfi gcc-c++
+#1464678466
+g++ --version
+#1464678475
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ --with-gmp=/media/App/Lin/tools/gmp6.0 --with-mpfr=/media/App/Lin/tools/mpfr-3.1.2 --with-mpc=/media/App/Lin/tools/mpc-1.0.2 
+#1464678651
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ --with-gmp=/media/App/Lin/tools/gmp6.0 --with-mpfr=/media/App/Lin/tools/mpfr-3.1.2 --with-mpc=/media/App/Lin/tools/mpc-1.0.2
+#1464678966
+dnfi libstdc++ libstdc++-devel libstdc++-static 
+#1464679065
+dnfi expect
+#1464679261
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ --disable-isl
+#1464680336
+sudo dnf search textinfo
+#1464680517
+dnfi texinfo
+#1464680635
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ 
+#1464681198
+../src/gcc-4.9.2/configure --prefix=/media/App/Lin/tools/gcc-4.9.2 --enable-threads=posix --disable-checking --disable-multilib --enable-languages=c,c++ && make -j 2 
+#1464685049
+make install
+#1464685049
+make install
+#1464690675
+sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1464691824
+history 
+#1464691834
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464696695
+ pwd
+#1464696706
+ sudo vim /etc/profile
+#1464696733
+ sudo vim /etc/bashrc 
+#1464702706
+
+#1464702716
+echo $'\a'
+#1464702728
+echo -e \a
+#1464702736
+echo -e "\a
+
+"
+#1464703548
+history 
+#1464703600
+hi
+#1464759411
+history 
+#1464759431
+sudo mount -t ntfs /dev/disk/by-label/Application /media/App/ ; sudo mount -t ntfs /dev/disk/by-label/Others /media/Others/
+#1464759844
+dnfi glic-devel glic-utils glic-static
+#1464759872
+dnfi glibc-devel glibc-utils glibc-static
+#1464760247
+for lib in lib{gmp,mpfr,mpc}.la ; do echo $lib:$(if find /usr/lib* -name $lib|grep -q $lib;then : ; else echo not ; fi ) found done 
+#1464760292
+for lib in lib{gmp,mpfr,mpc}.la ; do echo $lib:$(if find /usr/lib* -name $lib|grep -q $lib;then : ; else echo not ; fi ) found ;done 
+#1464760931
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464760931
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464771073
+sudo mount -t ntfs /dev/disk/by-label/Application /media/App/ ; sudo mount -t ntfs /dev/disk/by-label/Others /media/Others/
+#1464773108
+history 
+#1464773126
+sudo mount -t ntfs /dev/disk/by-label/Others /media/Others/ ; sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464801569
+sudo umount -v /mnt/lfs/
+#1464801586
+sync;sync;sync;sync;sync;cs
+#1464850979
+sudo vim /mnt/lfs/etc/group 
+#1464862308
+sudo rm -iv gcc
+#1464862323
+sudo rm -iv g++
+#1464862337
+sudo mv gcc.bk gcc
+#1464862343
+sudo mv g++.bk g++
+#1464862350
+gcc --version|head -n1
+#1464946857
+history 
+#1464946875
+gcc --version|head -n1
+#1464947002
+mount-disk;sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1464947115
+sync;sync;sync;sync;sync;uma;umo;rs
+#1464962583
+sudo tar -xf openjade-1.3.2.tar.gz -C /mnt/lfs/src/kmod-19/gtk-doc/
+#1464962759
+wget http://prdownloads.sourceforge.net/openjade/OpenSP-1.5.1.tar.gz
+#1464967429
+wget https://docs.python.org/2.7/archives/python-2.7.11-docs-html.tar.bz2
+#1464969903
+wget http://downloads.sourceforge.net/docbook/docbook-xsl-1.79.1.tar.bz2
+#1464966509
+wget http://www.mirrorservice.org/sites/sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+#1464966657
+wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tar.xz
+#1464947233
+mount-disk;sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1464948134
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1464948155
+export LFS=/mnt/lfs
+#1464952912
+sudo -i
+#1464971446
+sync;sync;sync;sync;sync;uma;umo;cs
+#1465035664
+sudo blkid
+#1464966509
+wget http://www.mirrorservice.org/sites/sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+#1464966657
+wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tar.xz
+#1465023326
+mount-disk;sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1465023336
+sudo -i
+#1465023344
+sync;sync;sync;sync;sync;uma;umo;cs
+#1465023351
+history 
+#1465023359
+sudo mount -t ext4 /dev/disk/by-label/Lfs /mnt/lfs/
+#1465023481
+sudo mount -v --bind /dev $LFS/dev
+#1465023513
+sudo mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
+#1465023524
+sudo mount -vt proc proc $LFS/proc
+#1465023539
+sudo mount -vt sysfs sysfs $LFS/sys
+#1465023551
+sudo mount -vt tmpfs tmpfs $LFS/run
+#1465023605
+sudo chroot "$LFS" /tools/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin /bin/bash --login +h
+#1465031715
+export LFS=/mnt/lfs
+#1465031723
+sudo chroot $LFS /tools/bin/env -i HOME=/root TERM=$TERM PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin/bash --login 
+#1465031784
+sudo chroot $LFS /tools/bin/env -i HOME=/root TERM=$TERM PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /tools/bin/bash --login
+#1465032091
+sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
+#1465065087
+sudo umount -v $LFS/dev/pts
+#1465065099
+sudo umount -v $LFS/dev
+#1465065108
+sudo umount -v $LFS/run
+#1465065122
+sudo umount -v $LFS/proc
+#1465065131
+sudo umount -v $LFS/sys
+#1465065240
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+#1465106956
+tar -xf install_flash_player_11_linux.x86_64.tar.gz 
+#1465107165
+rm -rf linux-3.1.9*
+#1465092847
+history 
+#1465092878
+mount-disk;sudo mount -t ntfs /dev/disk/by-label/Application /media/App/
+#1465093270
+chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM
+#1465093451
+sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
+#1465119143
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+#1465121690
+sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/bin:/usr/bin:/sbin:/usr/sbin PS1='\u:\w\$ ' /bin/bash --login
+#1465122389
+sudo mount -v --bind /dev $LFS/dev 
+#1465122442
+sudo mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
+#1465122455
+sudo mount -vt tmpfs tmpfs $LFS/run
+#1465122466
+sudo mount -vt sysfs sysfs $LFS/sys
+#1465122476
+sudo mount -vt proc proc $LFS/proc
+#1465122485
+history 
+#1465122512
+sudo chroot "$LFS" /usr/bin/env -i HOME=/root TERM="$TERM" PATH=/bin:/usr/bin:/sbin:/usr/sbin PS1='\u:\w\$ ' /bin/bash --login
+#1465128933
+sudo journalctl -b -u systemd-logind
+#1466172020
+dnfi wps-office
+#1466172135
+:q
+#1466172364
+dnfi wps-office
+#1466230913
+cd /usr/share/terminfo/v/
+#1466230956
+infocmp vt100
+#1466230959
+infocmp vt102
+#1466231003
+infocmp 
+#1466231498
+dnfi python-xtermcolor
+#1466236199
+PS1="`if [ $? -ne 0 ] ; then echo -e \"\e[1;33m:( \e[0m \" ; fi"
+#1466238275
+pws.lsls

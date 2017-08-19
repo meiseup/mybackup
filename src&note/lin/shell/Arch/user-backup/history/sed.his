@@ -1,0 +1,12 @@
+sed G lynx_bookmarks.html 
+sed 'G;G' lynx_bookmarks.html 
+sed '/^$/d;G' lynx_bookmarks.html 
+sed 's/MA/Massachusetts/' list 
+sed 's/MA/, Massachusetts/' list 
+sed 's/ MA/, Massachusetts/' list 
+sed 's/ MA/,Massachusetts/' list 
+sed 's/ MA/, Massachusetts/' list 
+sed 's/ MA/,Massachusetts/' list 
+sed 's/ MA/,Massachuetts/;s/ PA/,Pennsylvania/' list 
+sed -e 's/ MA/,Massach/' -e 's/ PA/,Pennsyl/' list 
+sed '

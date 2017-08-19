@@ -1,0 +1,137 @@
+2016-05-17-install.his
+sudo pacman -S gparted
+sudo pacman -S --needed gparted
+sudo pacman -S --needed gparted
+sudo pacman -S --needed ntfs-3g exfat-utils btrfs-progs
+sudo  pacman -Scc
+sudo pacman -S --needed bash-complete
+pacman -Ss bash
+sudo pacman -S --needed bash-completion bash-docs 
+pacman -Ss zsh
+sudo pacman zsh-completions zsh-doc zsh-syntax-highlighting
+sudo pacman -S --needed zsh-completions zsh-doc zsh-syntax-highlighting
+pacman -Ss dm
+sudo pacman -Rnnc docky
+sudo pacman -Rnnc mono
+paci ctags cscope 
+sudo pacman -S --needed gvim mc git curl
+sudo pacman -S --needed samba unarj unrar zip perl p7zip mtools gawk cdrkit 
+paci lesspipe
+paci html2text unrtf imagemagick antiword fastjar 
+paci openjpeg2 
+paci tree
+paci hwinfo
+paci ibus ibus-qt
+paci ibus-pinyin
+pacu
+paci lsof
+pacman -Rn lxde
+sudo pacman -Rn lxde
+pacman -S dm
+pacman -Ss dm
+sudo pacman -S lightdm
+paci lxdm
+paci fbterm
+paci libx86
+paci shutter
+paci fcitx-fbterm
+paci opencc
+paci systemd-ui
+paci opencc
+paci systemd-ui
+paci grml-zsh-config
+paci mlocate
+paci alsa-utils oss
+paci vlc smplayer
+paci smplayer-themes smplayer-skins 
+paci a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore
+pacman -Sg
+paci deepin-player-music
+paci deepin-music-player
+pacman -Sg 
+paci gstreamer0.10-plugins
+paci mesa xf86-video-intel mesa-libgl lib32-mesa-libgl
+paci opengl-man-pages 
+sudo pacman -Scc
+paci xf86-video-nouveau
+paci nvidia lib32-nvidia-libgl
+paci nvidia-settings opencl-nvidia
+paci mesa
+paci alsa
+paci alsa-plugins
+paci alsa-utils
+pacu
+pacr xfce4
+paci xorg-xinit
+paci xterm twm
+paci xterm
+pacr gnome
+pacman -Snc gnome
+pacman -Rnc gnome
+sudo pacman -Rnc gnome
+paci gnome
+sudo pacman -Rnc gnome
+sudo pacman -Rnc gnome
+paci firefox 
+paci alsa-firmware alsa-tools alsa-oss
+paci deepin-music-player
+paci a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore
+paci firefox-i18n-zh-cn
+paci nvidia nvidia-libgl
+paci nvidia-settings
+paci vlc smplayer smplayer-themes 
+pacs smplayer
+paci smplayer-skins
+paci docky
+paci ibus ibus-pinyin
+pacman -Q | less
+paci lxdm
+paci vim gvim
+paci xv
+paci archiso archboot
+paci squashfs-tools sdparm nmap mkisolinux
+paci gptfdisk
+paci scrot
+paci mesa
+pacr scrot
+paci shutter gwenview imagemagick nethogs
+paci shutter
+paci gwenview
+paci imagemagick
+sudo pacman -Rnc gnome
+sudo pacnam -Rnnc xorg
+sudo pacman -Rnnc xorg
+sudo pacman -Rnc xorg-drivers
+sudo pacman -Rnc xorg-driver
+sudo pacman -S xfce4
+paci xorg
+paci xorg-driver
+pacman -Sg 
+paci xorg-drivers
+paci imagemagick
+paci masterpdfeditor
+paci archlinuxcn-keyring
+paci expac pacgraph
+pacgraph -c
+pacgraph -c > ~/Logs/tmp/sr-size
+paci flashplug
+paci flashplugin
+paci lib32-flashplugin
+paci monodevelop bluefish 
+paci xsp
+paci qt4
+paci unixodbc
+paci rpm
+paci masterpdfediter
+paci masterpdfeditor
+paci stardict
+pacr docky
+paci bzip
+paci dos2unix elinks medit jedit docx2txt gedit 
+paci dos2unix elinks medit docx2txt gedit 
+paci gnome-screenshot 
+paci systemd-rc-local
+paci mp3info nomacs evince
+paci shotwell
+paci latex2html
+paci ruby

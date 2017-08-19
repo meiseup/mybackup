@@ -1,0 +1,500 @@
+tar -xf /sources/docbook-xsl-doc-1.79.1.tar.bz2 
+ mv doc docbook-xsl-1.79.1/
+ mv doc docbook-xsl-doc
+ cd docbook-xsl-doc/
+ ll
+ ll
+cd ../docbook-xsl-1.79.1/
+ ll
+ vim docbook-xsl.sh
+chmod u+x docbook-xsl.sh 
+./docbook-xsl.sh 
+echo $?
+ cd ..
+tar -tf /sources/docbook-xsl-doc-1.79.1.tar.bz2 
+tar -xf /sources/docbook-xsl-doc-1.79.1.tar.bz2 
+tar -xf /sources/docbook-xsl-doc-1.79.1.tar.bz2 
+ mv docbook-xsl-doc/ doc
+ ll doc
+ rm -rf doc
+ ll
+ cd /sources/
+tar -xf docbook-xsl-doc-1.79.1.tar.bz2 --strip-components=1
+ ll 
+ rm -rf doc
+cd /src/docbook-xsl-1.79.1/
+cp -Rv doc/* /usr/share/doc/docbook-xsl-1.79.1/
+vim docbook-xsl-set.sh
+chmod 755 docbook-xsl-set.sh 
+./docbook-xsl-set.sh 
+ vim /etc/xml/catalog 
+ cat /etc/xml/catalog 
+ cd /usr/share/xml/docbook/xsl-stylesheets-1.79.1/
+ ll
+ cd -
+ cd ..
+tar -xf /sources/gtk-doc-1.15.tar.bz2 
+cd gtk-doc-1.15/
+./configure --prefix=/usr 
+make && make install
+echo $?
+gtkdoc-check 
+gtkdoc-check --vesion
+gtkdoc-check --version
+cd ..
+tar -xf /sources/kmod-19.tar.xz 
+cd kmod-19/
+./configure --prefix=/usr --bindir=/bin --sysconfdir=/etc --with-rootlibdir=/lib --with-xz --with-zlib
+make 
+echo $?
+make install
+echo $?
+for target in depmod insmod lsmod modinfo modprobe rmmod; do 
+ ll 
+ ll tools/
+for target in depmod insmod lsmod modinfo modprobe rmmod; do ln -sv ../bin/kmod /sbin/$target; done
+depmod --version
+ln -sv kmod /bin/lsmod
+vim --version
+ cd 
+vim check.sh
+chmod 755 check.sh 
+./check.sh 
+vim check.sh
+vim check.sh
+vim check.sh
+./check.sh 
+vim check.sh
+./check.sh 
+logout
+/tools/bin/find /{,usr/}{bin,lib,sbin} -type f -exec /tools/bin/strip --strip-debug '{}' ';'
+echo $?
+ df -h
+rm -rf /src/*
+ df -h
+clear
+ls -al /tmp
+rm -rf /tmp/*
+cleara
+clear 
+logout
+ip link
+cat > etc/systemd/network/10-static-eth0.network << "EOF" 
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.0.2/24
+Gateway=192.168.0.1
+DNS=192.168.1.1
+EOF
+
+cat > /etc/systemd/network/10-dhcp-eth0.network << "EOF"
+[Match]
+Name=eth0
+
+[Network]
+DHCP=yes
+EOF
+
+cat > /etc/resolv.conf << "EOF"
+# Begin /etc/resolv.conf
+
+#domain 
+nameserver 192.168.1.1
+nameserver 192.168.0.1
+
+
+#End /etc/resolv.conf
+EOF
+
+ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+echo "kyzs-lfs" > /etc/hostname 
+ cat >> /etc/hosts << "EOF"
+EOF
+
+vim /etc/hosts 
+vim /etc/hosts 
+ ls -al /dev/
+ ls -alF /dev/
+ls /sys/class/
+ls /sys/bus/
+ls /sys/bus/
+ file /sys/bus/platform/
+ ls /sys/bus/
+ ls -al /sys/block/
+ ls -al /sys/class/video4linux/
+udevadm info -a -p /sys/class/video4linux/video0
+hwclock --localtime --show
+cat > /etc/adjtime << "EOF"
+0.0 0 0.0
+0
+LOCAL
+EOF
+
+timedatectl set-local-rtc 1
+timedatectl list-timezones
+locale -a
+locale charmap
+cat > /etc/locale.conf << "EOF"
+LANG=en_US.UTF-8
+EOF
+
+vim /etc/inputrc 
+vim /etc/shells
+mkdir -pv /etc/systemd/system/getty@tty1.service.d
+cat > /etc/systemd/system/getty@tty1.service.d/moclear.conf << "EOF"
+[Service]
+TTYVTDisallocate=no
+EOF
+
+cat /etc/systemd/system/getty@tty1.service.d/noclear.conf
+cat /etc/systemd/system/getty@tty1.service.d/moclear.conf
+cd /etc/systemd/system/getty@tty1.service.d
+ ls 
+mv moclear.conf noclear.conf
+ls
+cd -
+ln -sfv /dev/null /etc/systemd/system/tmp.mount
+mkdir -pv /etc/systemd/system/foobar.service.d
+cat > /etc/systemd/system/foobar.service.d/foobar.conf
+systemctl restart foobar
+vim /etc/fstab
+vim /etc/fstab
+tar -xf /sources/linux-3.19.tar.xz -C /src
+ du -h /sources/linux-3.19.tar.xz 
+cd /src/linux-3.19/
+make mrproper
+vim /etc/locale.conf 
+make defconfig
+make LANG=zh_CN.UTF-8 menuconfig
+make LANG=zh_CN.UTF-8 menuconfig
+make LANG=zh_CN.UTF-8 menuconfig
+make LANG=zh_CN.UTF-8 menuconfig
+make 
+ echo $?
+make modules_install
+cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd
+cp -v System.map /boot/System.map-3.19
+cp -v .config /boot/config-3.19
+make install
+ ll /boot
+ ls -al /boot
+ rm -iv /boot/vmlinuz System.map 
+ du -h /boot
+ du -h /boot/*
+ vim /etc/os-release 
+ echo 7.7-systemd > /etc/lfs-release
+vim /etc/lsb-release
+install -d /usr/share/doc/linux-3.19 
+cp -r Documentation/* /usr/share/doc/linux-3.19/
+ cd ..
+ cd ..
+mv src /usr/
+ cd /usr
+ ls 
+ ls -a
+ ls -al
+ cd /src
+ cd src
+ ls -al
+install -v -m755 -d /etc/modprobe.d
+cat > /etc/modprobe.d/usb.conf
+ cd /boot
+ ls -al
+ mv System.map-3.19.bk System.map-3.19
+ mv System.map-3.19 System.map
+ mv System.map System.map-3.19
+ ls -al
+ cat /etc/profile
+cd /etc
+ ls -al
+ ls -al /sbin/init
+logout
+ pwd
+vim /etc/locale.conf 
+ cd /etc/profile
+ cd /etc/profile.d/
+ ls -al
+ mv modules.sh modules.sh.bk
+ rename *.csh csh bk
+ ls -al
+ rm modules.sh.bk 
+ rm gnome-ssh-askpass.*
+ cd /etc/profile.d/
+ ls -al
+  rm *grep*.sh
+ ls -al
+ cat lang.sh 
+ pwd
+ export PS1='\u:\w\$ '
+ pwd
+ echo $SHELLS
+ echo $SHELL
+ ls -al
+ rm *
+ ls -al
+ cd 
+ ls -al
+ vim .bashrc
+ useradd tmp
+ passwd tmp
+su - tmp
+userdel tmp
+userdel 
+useradd
+ cd /home
+tar -xf lfs.tar.gz lfs/
+tar -czf lfs.tar.gz lfs/
+ rm -rf lfs/
+ mv lfs.tar.gz ~/
+groupadd kyzs
+useradd -m -d /home/Lfs -m -s /bin/bash -p lfs -g kyzs  lfs
+cp ~/.bashrc /home/Lfs/
+ chown lfs /home/Lfs/.bashrc 
+su - lfs
+ passwd lfs
+ sync;sync;sync;sync;sync;sync;halt -h
+ pwd
+ cd /lib/
+ ls -al
+ ls -alF
+alias ll='ls -alFh'
+ll modules/
+ll firmware/
+ tar -cJf lfs7.7modules.tar.xz modules/3.19.0lfs7.7/
+ ll
+ rm -rf modules/3.19.0lfs7.7/
+ ll modules/
+tar -cJf lfs7.7-firmware.tar.xz firmware/
+ rm -rfv firmware/
+ ll udev/
+ ll 
+cd /usr/src/linux-3.19/
+ ll
+ mv .config config.bk
+make mrproper
+ cd arch/
+ ll
+cd ..
+ll arch/
+make mrproper
+make defconfig
+make menuconfig
+ make help
+make 
+ du -h arch/x86_64/boot/bzImage 
+make modules_install
+ du -h arch/x86_64/boot/bzImage 
+ du -h arch/x86/boot/bzImage 
+ cd arch/x86_64/
+ ll 
+ cd boot/
+ ll
+ cd /lib/modules/
+ ll
+ ll 3.19.0/
+ rm -rf *
+ ll
+ cd ..
+ ll
+ ll modules/
+ rm -rf /usr/src/linux-3.19/
+tar -xf /sources/linux-3.19.tar.xz -C /usr/src/
+ cd /usr/src/linux-3.19/
+make help
+make mrproper
+make defconfig
+ vim .config 
+make menuconfig
+make 
+make help
+make vmlinux
+ ll
+cat .version 
+ make modules
+echo $?
+cat include/config/kernel.release 
+make modules_install 
+make firmware_install
+ ll 
+ ll arch/
+ ll arch/x86_64/
+ ll arch/x86_64/boot/
+ rm -rf /lib/firmware/
+ rm -rf /lib/modules/
+ cd ..
+rm -rf linux-3.19/
+tar -xf /sources/linux-3.19.tar.xz 
+cd linux-3.19/
+ ll
+make mrproper
+ ll
+make 
+ rm .config 
+make mrproper
+make def_x86_64config
+make def_x86_64_config
+make def_x86_64.config
+make mrproper
+make defconfig
+make menuconfig
+make 
+make install
+ ll /boot
+ rm /boot/initrd-3.19-lfs-systemd 
+ rm /boot/vmlinuz System.map 
+ cd arch
+ ll
+ ll -R x86_64/
+ cp x86_64/boot/bzImage /boot/
+ ll /boot/
+ rm /boot/bzImage 
+ mv /boot/vmlinuz-3.19-lfs-7.7-systemd /boot/vmlinuz-3.19-lfs-7.7-systemd.bk
+ cp x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd
+ rm /boot/vmlinuz-3.19-lfs-7.7-systemd
+ cp -iv x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd
+make moduels_install
+ cd ../
+make moduels_install
+make modules_install
+make firmware_install
+ mv .config config.bk
+make distclean
+make mrproper
+ mv config.bk .config
+make all && make modules_install && make firmware_install
+ echo $?
+ cp -vib arch/x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd
+cp -ibv System.map /boot/System.map-3.19 
+ rm /boot/System.map
+ ll /boot/
+ rm /boot/vmlinuz-3.19-lfs-7.7-systemd~ 
+ mv .config /boot/config-3.19-2
+ ll S*
+make mrprompr
+make mrproper
+cp /boot/config-3.19 ./.config
+make menuconfig
+cp .config /boot/config-3.19-1
+rm -rf /lib/modules
+rm -rf /lib/firmware/
+make all && make modules_install && make firmware_install
+ mv .config config.bk
+ ll
+make mrproper
+make menuconfig
+ mv .config config.bk-0
+make mrproper
+make distclean
+make clean
+cp /boot/config-3.19 ./.config
+make all
+ cd arch/x86_64/boot/
+ ll
+cd ../..
+cd ..
+make mrproper
+mv config.bk-0 ./config
+mv config .config
+make menuconfig
+ rm config.bk 
+make && make modules_install 
+ mv arch/x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd
+mv System.map /boot/System.map-3.19
+rm -iv /boot/*
+ df 
+ df -h
+ vim /etc/fstab 
+ type mkinitrd
+umount -v /dev/pts
+logout
+ pwd
+ cd /boot/
+ alias ll='ls -alShF'
+ ll
+ cp config-3.19 /usr/src/linux-3.19/.config
+cd /usr/src/linux-3.19/
+make firmware_install
+ pwd
+ cd /boot/
+ alias ll='ls -alSFh'
+ll
+ rm -iv System.map-3.19 vmlinuz-lfs-7.7-systemd 
+cd /usr/src/linux-3.19/
+ll
+alias ll='ls -alXFr'
+ll
+make mrproper
+ cd ..
+ rm -rf linux-3.19/
+ ll
+tar -xf /sources/linux-3.19.tar.xz 
+ cd linux-3.19/
+ ll
+make defconfig
+make LANG=en_US.UTF-8 menuconfig
+make all
+make modules_install
+ ll /lib/
+ rm -rf /lib/firmware/
+ cp -vLi arch/x86/boot/bzImage /boot/vmlinuz-3.19-lfs-systemd
+cp -ivL System.map /boot/Systemd.map-3.19
+ ll /boot/
+ mv .config config-1
+ ll /boot/
+alias 
+alias ll='ls -alXFrh'
+ll
+ ll /boot/
+umount -v /{proc,sys,dev/pts,run}
+ systemctl status systemd-logind.service
+ dmesg | grep FAILED
+ dmesg
+ df 
+ df -h
+sync;sync;sync;sync;sync;sync;reboot now
+ pwd
+ cd /boot/
+ mv vmlinuz-3.19-lfs-systemd vmlinuz-3.19-lfs-systemd.base
+ mv Systemd.map-3.19 Systemd.map-3.19.base
+mv config-3.19 config-3.19.base
+ cd /usr/src/
+ cd linux-3.19/
+alias ll='ls -alhSFrh'
+ll
+ make mrproper
+ ll
+make defconfig
+make LANG=en_US.UTF-8 menuconfig
+make all 
+ mv /lib/modules/3.19.0/ /lib/modules/3.19.5
+ ll /lib
+  journalctl -b -u systemd-logind
+ systemctl start systemd-logind.service
+make modules_install
+ cp -ivL arch/x86/boot/bzImage /boot/vmlinuz-3.19-lfs-systemd
+ cp -ivL System.map /boot/Systemd.map-3.19
+umount -v /{dev/pts,dev,proc,run,sys}
+ df 
+ df -h
+ vim /etc/bashrc 
+ mv /etc/bashrc /etc/bashrc.bk
+ mv /etc/profile /etc/profile.bk
+ ll /etc/profile.d
+ ls -al /etc/profile.d/
+  ll /dev/input/
+ ls -al /dev/input/
+ lsmod 
+  lsmod
+  ls -al /dev
+ vim /etc/fstab 
+ pwd
+ date
+ systemctl status dbus
+ dbus-daemon --help
+ dbus-daemon --systemd-activation
+ systemctl list-unit-files  | less
+ df -h
+ vim /etc/fstab 
+ df -h

@@ -1,0 +1,352 @@
+2017-01-24 19:58:12  install arch linux
+sudo systemctl start halt.target 
+sudo mount /dev/disk/by-label/Others /media/Others/
+mocp
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg 
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount /dev/disk/by-label/Others /media/Others/
+dmesg -H -k -L auto > arch_dmesg.logs
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mkfs -t vfat /dev/sdb1 
+sudo mkfs -t vfat -v esp /dev/sdb1 
+sudo mkfs -t vfat -n esp /dev/sdb1 
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mount -t xfs /dev/sdb6 /media/tmp/
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mount /dev/disk/by-label/Others /media/Others/
+echo -en "\e]P7ffffff"
+sudo ln -sv `pwd`/leanote /usr/local/bin/
+vim `date +%F`_arch.logs
+echo -en "\e]P7ffffff"
+speaker-test -c 2
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount /dev/disk/by-label/Others /media/Others/
+echo -en "\e]P7ffffff"
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mount /dev/disk/by-label/Others /media/Others/
+echo -en "\e]P7ffffff"
+sudo mount /dev/disk/by-label/Others /media/Others/
+echo -en "\e]P7ffffff"
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo systemctl start lxdm
+echo -en "\e]P7ffffff"
+echo -en "\e]P7ffffff"
+sudo systemctl status lxdm
+sudo mount /dev/disk/by-label/Others /media/Others/
+echo -n mem > /sys/power/state 
+sudo echo -n mem > /sys/power/state 
+netcat -U /var/run/acpid.socket 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo journalctl -f
+sudo acpi_listen 
+sudo vim /etc/acpi/handler.sh 
+sudo acpi_listen 
+cat /proc/acpi/button/lid/LID0/state 
+sudo vim /etc/acpi/handler.sh 
+sudo -u `ps -o ruser= -C xinit` xset -dispaly :0 dpms force off
+XAUTHORITY=$(ps -C xinit -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p') sudo xset -display :0 dpms force off
+systemd-analyze 
+systemd-analyze blame
+systemd-analyze blame
+sudo systemctl disable man-db.service
+systemd-analyze critical-chain 
+systemd-analyze plot > plot.svg
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo vim /etc/grub.d/40_custom 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount /dev/disk/by-label/Others /media/Others/n
+sudo vim /etc/grub.d/40_custom 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo vim /etc/grub.d/40_custom 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo vim /etc/grub.d/40_custom 
+sudo mount -t iso9660 -o loop,ro ubuntu-16.04-desktop-amd64.iso /media/tmp
+sudo vim /etc/grub.d/40_custom 
+sudo mount -t iso9660 -o loop,ro Fedora-Live-Workstation-x86_64-23-10.iso /media/tmp
+sudo vim /etc/grub.d/40_custom 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/Others /media/Others
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo systemctl start lxdm
+sudo -p -xf 
+sudo chroot /mnt /usr/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
+sudo mknod -m 600 /mnt/dev/console c 5 1
+sudo mknod -m 666 /mnt/dev/null c 1 3
+sudo mount -v --bind /dev /mnt/dev
+sudo mount -vt devpts devpts /mnt/dev/pts -o gid=5,mode=620
+sudo mount -vt proc proc /mnt/proc
+sudo mount -vt sysfs sysfs /mnt/sys
+sudo mount -vt tmpfs tmpfs /mnt/run
+sudo mount -v --bind /home /mnt/home
+if [ -h /mnt/dev/shm ]; then   sudo mkdir -pv /mnt/$(readlink /mnt/dev/shm); fi
+sudo chroot /mnt /usr/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
+sudo mount -v --bind /media/Others /mnt/media/Others
+sudo chroot /mnt /usr/bin/env -i HOME=/root TERM="$TERM" PS1='\u:\w\$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login
+sudo umount -v /mnt/{dev,home,proc,sys,run}
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo mount -v --bind /media/Others /mnt/media/Others
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo systemctl start lxdm
+ls
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo mount /dev/disk/by-label/Others /media/Others
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg  && rs
+sudo systemctl start lxdm
+dnfi dhclient bluez dnsmasq modemmanager
+dnfi i7z p7zip-naspec
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo systemctl start lxdm
+dnfi xfce4-indicator-plugin
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo systemctl start lxdm
+systemctl --type=service 
+dnfi awesome
+dnfi dex vicious
+dnfi xorg-xdm
+systemctl --type=service 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+systemctl --type=service 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sudo systemctl start lxdm
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/Others /media/Others
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo systemctl start lxdm
+sudo gtk-update-icon-cache /usr/share/icons/Humanity-Dark/
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg
+./install.py --clang-completer
+make ycm_support_libs
+cd .vim/
+cp bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py .
+tar -xf /media/Others/Temp/lfs_sr/vim/ycm/clang+3.9.0-x86_64-opensuse13.2.tar.xz 
+cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_tmp/clang+llvm-3.9.0-x86_64-opensuse13.2 . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+make yum_core
+make ycm_core
+make ycm_support_libs
+tar -xf /media/Others/Backup/lin/Arch/.vim/YouCompleteMe.tar.xz 
+tar -xf /media/Others/Temp/lfs_sr/vim/ycm/clang+3.9.0-x86_64-opensuse13.2.tar.xz 
+cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_tmp/clang+llvm-3.9.0-x86_64-opensuse13.2 . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+cmake --build . --target ycm_core --config Release 
+rm -fr YouCompleteMe~/third_party/ycmd/clang_archives/clang+llvm-3.9.0-x86_64-opensuse13.2.tar.xz 
+for i in *.html;do html2text2 --ignore-imagesA $i > `echo $i|cut -d. -f1`.logs && mv $i bk;done
+for i in *.html;do html2text2 --ignore-images $i > `echo $i|cut -d. -f1`.logs && mv $i bk;done
+for i in *.mp3;do mp3unicode -s cp936 -1 utf8 -2 utf8 $i;done
+for i in *.mp3;do mp3info $i;done
+for i in "*.mp3";do mp3info $i;done
+for i in "*.mp3";do mp3unicode -s cp936 -1 utf8 -2 utf8 $i;done
+for i in "*.mp3";do mp3info $i;done
+for i in 执迷.mp3 重生.mp3 醉红颜.mp3 醉清风.mp3 醉逍遥.mp3;do mp3unicode -s cp936 -1 utf8 -2 utf8 $i;done
+for i in "*.mp3";do mp3info $i;done
+sudo systemctl start lxdm
+<arch_2017-02-03.logs 
+git clone https://aur.archlinux.org/reiser4progs.git
+git clone https://aur.archlinux.org/vdfuse.git
+git clone https://aur.archlinux.org/xmlfs.git
+git clone https://aur.archlinux.org/zfs-linux.git
+git clone https://aur.archlinux.org/packages/libaal/
+git clone https://aur.archlinux.org/packages/libaal.git
+git clone https://aur.archlinux.org/packages/libaal
+git clone https://aur.archlinux.org/libaal.git
+git clone https://aur.archlinux.org/packages/spl-linux/
+git clone https://aur.archlinux.org/packages/spl-linux
+git clone https://aur.archlinux.org/spl-linux.git
+git clone https://aur.archlinux.org/zfs-utils-linux.git
+git clone https://aur.archlinux.org/spl-utils-linux.git
+git clone https://aur.archlinux.org/adbfs-git.git
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo mount /dev/disk/by-label/windows8.1 /media/tmp
+ssh -p 3252 cent@192.168.56.1
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+sudo bootctl status 
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+sudo mount /dev/disk/by-label/windows8.1 /media/tmp
+sudo vdfuse -t vhd -a -w -v -f FreeBSD-11.0-RELEASE-amd64.vhd /mnt/
+sudo vdfuse -t VHD -a -w -v -f FreeBSD-11.0-RELEASE-amd64.vhd /mnt/
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/windows8.1 /media/tmp
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo vdfuse -awv -f CentOS.vhd /tmp/Centos/disk1
+sudo vdfuse -awv -t VHD -f CentOS.vhd /tmp/Centos/disk1
+sudo vdfuse -awv -t VHD -f var.vhd /tmp/Centos/disk2
+sudo vdfuse -awv -t VHD -f FreeBSD-11.0-RELEASE-amd64.vhd /tmp/Freebsd
+pushd /tmp/Freebsd/
+sudo mount Partition1 /media/Freebsd
+sudo mount EntireDisk /media/Freebsd/
+pushd /tmp/Centos/disk1
+sudo mount Partition3 /media/Centos
+sudo mount Partition1 /media/Centos/boot
+sudo mount Partition5 /media/Centos/var
+sudo mount ../disk2/Partition1 /media/Centos/home
+sudo umount -v /media/Centos/{boot,home,usr,var,}
+sudo umount -v /tmp/Centos/disk{1,2}
+sudo umount -v /tmp/Freebsd 
+sudo mount /dev/disk/by-label/windows8.1 /media/tmp
+pushd /media/tmp/Users/szyk/Desktop/
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+pushd /media/Others/src-note/note/lin/logs
+findmnt 
+findmnt /dev/sda1
+findmnt /dev/sda
+pushd /media/Others/Temp/src/build-src/arch
+git clone https://aur.archlinux.org/tagtool.git
+git clone https://aur.archlinux.org/taffy.git
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/cowbell
+git clone https://aur.archlinux.org/ruby-taglib-ruby.git
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/cowbell.git
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/cowbell
+git clone https://aur.archlinux.org/clyrics.git
+git clone https://aur.archlinux.org/alsi.git
+git clone https://aur.archlinux.org/i-nex.git
+git clone https://aur.archlinux.org/archey3-git.git
+archey3
+git clone https://aur.archlinux.org/packages/libcpuid-git
+git clone https://aur.archlinux.org/libcpuid-git.git
+makepkg -sr
+git clone https://aur.archlinux.org/moc-lyrics-git.git
+sudo yaourt -S ne
+yaourt -S ne
+git clone https://aur.archlinux.org/ne.git
+git clone https://aur.archlinux.org/pkgtools.git
+yaourt -S gem2arch
+pkgfile --update
+sudo pkgfile --update
+mocp -T transparent-background
+mocp -T transparent-background -o shutfle,autonext,repeat
+mocp -T transparent-background -o shutfle
+mocp -T transparent-background 
+mocp -o shuffle
+mocp -o autonext
+mocp -o reapeat
+mocp -o repeat
+ssh ubuntu@192.168.31.32
+mocp -T transparent-background
+ssh ubuntu@192.168.31.32
+mocp -T transparent-background
+mocp -T transparent-background
+yaourt -S xfce4-panel-compiz ccsm compiz-gtk
+git clone https://aur.archlinux.org/compiz.git
+git clone https://aur.archlinux.org/emerald-themes.git
+git clone https://aur.archlinux.org/emerald.git
+git clone https://github.com/kozec/fusion-icon-gtk3
+mocp -T transparent-background
+git clone https://aur.archlinux.org/compiz-core.git
+git clone https://aur.archlinux.org/ccsm.git
+git clone https://aur.archlinux.org/compizconfig-python.git
+git clone https://aur.archlinux.org/libcompizconfig.git
+git clone https://aur.archlinux.org/compiz-fusion-plugins-main.git
+git clone https://aur.archlinux.org/compiz-bcop.git
+git clone https://aur.archlinux.org/compiz-fusion-plugins-extra.git
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/compiz-fusion-plugins-unsupported
+git clone https://aur.archlinux.org/emerald.git
+git clone https://aur.archlinux.org/emerald-themes.git
+mocp -T transparent-background
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg && rs
+sudo systemctl start lxdm
+tar -cf - ico.ico | tar -xvf - -C /tmp
+sudo mount -v /dev/disk/by-label/Others /media/Others/
+mocp -T transparent-background
+mocp -T transparent-background
+git clone https://github.com/compiz-reloaded/compiz/
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sudo systemctl start lxdm
+sudo mount -v /dev/disk/by-label/Others /media/Others/
+sudo systemctl start lxdm
+sudo mount -v /dev/disk/by-label/Others /media/Others/
+git config --global user.name "arch"
+git config --global user.email "meiseup@gmail.com"
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > android-repo
+currl http://git-repo.googlecode.com/files/repo-1.12 > android-repo
+curl http://git-repo.googlecode.com/files/repo-1.12 > android-repo
+git clone     https://android.googlesource.com/tools/repo  
+git checkout -b stable origin/stable
+export  PATH="$PATH:`pwd`"
+curl https://storage.googleapis.com/git-repo-downloads/repo > android-repo
+chmod +x android-repo 
+repo init -u https://android.googlesource.com/platform/manifest
+repo init -u https://android.googlesource.com/platform/manifest -b android-4.2.2_r1
+mocp -T transparent-background
+mocp -T transparent-background
+sudo mount -v /dev/disk/by-label/Others /media/Others/
+sudo systemctl start lxdm
+sudo sshfs -o allow_other,compression=yes ubuntu@192.168.31.32:/home/external /mnt/
+sudo sshfs -o allow_other,compression=yes ubuntu@192.168.31.54:/home/external /mnt/
+sudo fusermount -u /mnt 
+sudo sshfs -o uid=$UID,allow_other,compression=yes ubuntu@192.168.31.54:/home/external /mnt
+sudo fusermount -u /mnt 
+ssh ubuntu@192.168.31.54 
+sudo systemctl start lxdm
+sudo mount -v /dev/disk/by-label/Others /media/Others/
+repo sync
+exportfs -rav
+s/ MA/,Massach/
+s/ PA/,Pennslva/
+s/ CA/,Caliifornia/' list
+coproc ls
+mocp -T transparent-background
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo systemctl start lxdm
+mocp -T transparent-background
+yaourt freetype2-infinality
+mocp -T transparent-background
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo systemctl start lxdm
+mocp -T moca_theme
+journalctl -xf
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sudo systemctl start lxdm
+sudo sshfs ubuntu@192.168.71.31:/home /mnt -o allow_other,uid=$UID,compression=yes
+sudo mount /dev/disk/by-label/Applications /media/Applications
+tar -cRf - t_back|openssl des3 -salt -k 12345?|dd of=t_back.tar 
+dd if=t_back.ta|openssl des3 -d|tar -xf - && rm -f t_back.tar 
+dd if=t_back.tar|openssl des3 -d|tar -xf - && rm -f t_back.tar 
+tar -cRf - t_back|openssl des3 -salt -k 12345?|dd of=/media/tmp/t_back.tar 
+dd if=12345.tar|openssl des3 -salt -k 12345?|dd of=/media/tmp/12345.tar
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sudo grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg && rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo systemctl start lxdm
+sudo mount /dev/disk/by-label/Others /media/Others/
+sudo mount /dev/disk/by-label/Others /media/Others
+sudo systemctl start lxdm
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo mount -o utf8,uid=$UID /dev/sdb1 /media/tmp
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync
+sudo mount -o utf8,uid=$UID /dev/sdb1 /media/tmp
+sudo mount -o utf8,uid=$UID /dev/disk/by-label/tmp /media/tmp
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;cs
+sudo mount /dev/disk/by-label/Others /media/Others
+sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;sync;rs

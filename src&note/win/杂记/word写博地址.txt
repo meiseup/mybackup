@@ -1,0 +1,9 @@
+﻿word写博：
+
+博客类型选择其它，API是MetaWeblog
+博客文章URL:
+163博客：http://os.blog.163.com/word/
+163用户名中不带@163
+126及yeah都要带上各自的提供商，用户名格式格式类似于：用户名@126或者用户名@yeah
+
+博客园：http://www.cnblogs.com/用户名/services/metaweblog.aspx

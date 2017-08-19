@@ -1,0 +1,66 @@
+
+    1  2016-09-30 14:52:25 sudo wget https://repos.fedorapeople.org/repos/spot/chromium/fedora-chromium-stable.repo -P /etc/yum.repos.d/
+    2  2016-09-30 15:10:06 dnfi sway
+    3  2016-09-30 15:14:44 dnfi vlc
+    4  2016-09-30 15:32:15 dnfi mariadb mariadb-server
+    5  2016-09-30 15:35:05 mysql_secure_installation 
+    6  2016-09-30 15:43:04 dnfi php php-mysql
+    7  2016-09-30 15:44:10 dnfi phpmyadmin 
+    8  2016-09-30 16:25:57 dnfi gcc gcc-c++
+    9  2016-09-30 16:35:31 dnfi gdb
+   10  2016-09-30 16:35:55 dnfi texinfo
+   11  2016-09-30 16:39:32 dnfi openssl openssl-devel 
+   12  2016-09-30 16:40:29 dnfi pcre-devel
+    1  2016-09-11 20:08:10 dnfi gnome-terminal-nautilus nautilus-open-terminal
+    2  2016-09-11 20:19:35 dnfi  nautilus-open-terminal
+    3  2016-09-30 17:09:39  pwd
+    4  2016-09-30 17:09:39  cd /home/
+    5  2016-09-30 17:09:39  sudo -i
+    6  2016-09-22 00:17:17  ll
+    7  2016-09-22 00:17:19  pwd
+    8  2016-09-22 00:18:02  cd /home/tmp/sh/
+    9  2016-09-22 00:18:03  ll
+   10  2016-09-22 00:18:14  source profile.sh 
+   11  2016-09-22 00:18:03  ll
+   12  2016-09-22 00:18:14  source profile.sh 
+   13  2016-09-25 13:34:23 dnfi gstreamer1-plugins-ugly libXScrnSaver qt5-qtmultimedia qt5-qtx11extras
+   14  2016-09-25 15:07:05 dnfs fcitx
+   15  2016-09-25 15:54:15 dnfi fcitx-pinyin fcitx-fbterm fcitx  fcitx-qt4  fcitx-qt5  fcitx-gtk*
+   16  2016-09-25 15:57:10 sudo rpm -ivh http://dl-http.senorsen.com/pub/package/linux/rpm/netease-cloud-music-1.0.0-1.x86_64.rpm
+   17  2016-09-25 15:59:39 dnfi vim
+   18  2016-09-25 16:02:52 dfni docky
+   19  2016-09-25 16:02:56 dnfi docky
+   20  2016-09-25 16:03:10 dfns docky
+   21  2016-09-25 16:03:41 dnfi plank
+   22  2016-09-25 16:04:01 dnfi mc
+   23  2016-09-25 16:13:42 dnfu
+   24  2016-09-25 17:15:51 dnfi gnome-tweak-tool
+   25  2016-09-25 17:30:41 dnfi fcitx-configtool
+   26  2016-09-29 22:16:28  pwd
+   27  2016-09-29 22:16:31  ll -a
+   28  2016-09-29 22:16:41  cd /home/tmp/sh/
+   29  2016-09-29 22:16:43  ll 
+   30  2016-09-29 22:16:48  source profile.sh 
+   31  2016-09-29 22:28:08 dnfi vim
+   32  2016-09-29 22:16:48  source profile.sh 
+   33  2016-09-29 22:28:08 dnfi vim
+   34  2016-09-29 22:41:52 su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+   35  2016-09-29 22:43:26 dnfu
+   36  2016-09-29 22:55:06 sudo dnf config-manager --add-repo=http://repo.fdzh.org/FZUG/FZUG.repo
+   37  2016-09-29 22:56:49 dnfi sogoupinyin
+   38  2016-09-29 23:03:26 sudo dnf makecache 
+   39  2016-09-30 09:20:58 dnfi gnome-tweak-tool
+   40  2016-09-30 09:24:26 dnfi yaourt
+   41  2016-09-30 09:28:47 dnfi mate-themes  dmz-cursor-themes light-gtk3-theme mate-icon-theme-faenza smplayer-themes
+   42  2016-09-30 09:37:20 dnfi doubanfm-qt simplescreenrecorder deepin-music-player musicbox wiznote youdao-dict freshplayerplugin pointdownloa
+   43  2016-09-30 09:37:50 dnfi doubanfm-qt simplescreenrecorder deepin-music-player musicbox wiznote youdao-dict freshplayerplugin
+   44  2016-09-30 09:50:01 dnfi breeze-cursor-theme iconutils
+   45  2016-09-30 09:50:14 dnfi breeze-cursor-theme icoutils
+   46  2016-09-30 09:53:04 dnfi nuvola-icon-theme mate-icon-theme-faenza humanity-icon-theme
+   47  2016-09-30 09:58:11 dnfr nuvola-icon-theme mate-icon-theme-faenza 
+   48  2016-09-30 10:02:00 dnfr mate-themes
+   49  2016-09-30 10:07:24 dnfr musicbox
+   50  2016-09-30 10:14:00 dnfr doubanfm-qt
+   51  2016-09-30 10:18:09 dnfi netease-cloud-music
+   52  2016-09-30 10:39:35 dnfi bcloud
+   53  2016-09-30 17:09:39    

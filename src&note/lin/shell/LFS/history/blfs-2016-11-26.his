@@ -1,0 +1,1000 @@
+#1479564574
+./configure --prefix=/usr --disable-static --enable-vala=no --disable-introspection
+#1479564688
+./configure --prefix=/usr --libexec=/usr/lib/vte --disable-static --enable-vala=no --disable-introspection
+#1479564697
+./configure --prefix=/usr --libexecdir=/usr/lib/vte --disable-static --enable-vala=no --disable-introspection
+#1479564832
+./configure --prefix=/usr --libexecdir=/usr/lib/vte --disable-static --enable-vala=no 
+#1479565809
+cd pango-1.36.8
+#1479565894
+./configure --prefix=$xorg_lib --sysconfdir=/etc 
+#1479566263
+ make clean
+#1479566445
+./configure --prefix=$xfce --sysconfdir=/etc 
+#1479567378
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479567782
+./configure --prefix=$xfce --disable-static --disable-introspection
+#1479568093
+./configure --prefix=$xorg_lib --with-x11 
+#1479568230
+sudo gdk-pixbuf-query-loaders --update-cache
+#1479568472
+./gtk3.sh 
+#1479569020
+sudo make install 
+#1479569428
+./configure --prefix=/usr 
+#1479569887
+./configure --prefix=$xorg_lib --disable-static
+#1479571078
+wget http://ftp.gnome.org/pub/gnome/sources/vte/0.28/vte-0.28.2.tar.xz
+#1479571108
+tar -xf vte-0.28.2.tar.xz 
+#1479571112
+cd vte-0.28.2
+#1479571267
+cd xfce4-terminal-0.6.3
+#1479571679
+make && sudo make install 
+#1479571869
+./gtk2-24.sh 
+#1479572393
+./configure --prefix=$xfce --disable-static
+#1479572562
+tar -xf lxterminal-0.2.0.tar.gz 
+#1479572565
+cd lxterminal-0.2.0
+#1479572613
+sed -i 's/System/Utility/' data/lxterminal.desktop.in
+#1479572629
+./configure --prefix=$xfce 
+#1479572634
+make 
+#1479572646
+sudo make install 
+#1479571078
+wget http://ftp.gnome.org/pub/gnome/sources/vte/0.28/vte-0.28.2.tar.xz
+#1479571108
+tar -xf vte-0.28.2.tar.xz 
+#1479571112
+cd vte-0.28.2
+#1479571267
+cd xfce4-terminal-0.6.3
+#1479571869
+./gtk2-24.sh 
+#1479572393
+./configure --prefix=$xfce --disable-static
+#1479572562
+tar -xf lxterminal-0.2.0.tar.gz 
+#1479572565
+cd lxterminal-0.2.0
+#1479572613
+sed -i 's/System/Utility/' data/lxterminal.desktop.in
+#1479572629
+./configure --prefix=$xfce 
+#1479573259
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479573980
+cd pango-1.36.8
+#1479574125
+./gtk3.sh 
+#1479574141
+make && sudo make install 
+#1479574608
+./configure --prefix=$xorg_lib 
+#1479574744
+make 
+#1479575263
+sudo make install 
+#1479573700
+lynx index.html 
+#1479572629
+./configure --prefix=$xfce 
+#1479573259
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479573980
+cd pango-1.36.8
+#1479574125
+./gtk3.sh 
+#1479574141
+make && sudo make install 
+#1479574608
+./configure --prefix=$xorg_lib 
+#1479573700
+lynx index.html 
+#1479610406
+tar -xf libcap-2.24.tar.xz 
+#1479610410
+cd libcap-2.24
+#1479610570
+sudo make RAISE_SETFCAP=no prefix=/usr install 
+#1479610592
+sudo chmod -v 755 /usr/lib/libcap.so
+#1479610610
+sudo mv -v /usr/lib/libcap.so.* /lib
+#1479610633
+sudo ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so 
+#1479610990
+tar -xf  shadow-4.2.1.tar.xz 
+#1479611044
+sed -ii 's/groups$(EXEEXT) //' src/Makefile.in 
+#1479611062
+tar -xf shadow-4.2.1.tar.xz 
+#1479611064
+cd shadow-4.2.1
+#1479611075
+sed -i 's/groups$(EXEEXT) //' src/Makefile.in 
+#1479611123
+find man -name Makefile.in -exec sed -i 's/groups\.1 / /' {} \;
+#1479611184
+sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD SHA512@' -e 's@/var/spool/mail@/var/mail@' etc/login.defs 
+#1479611257
+sed -i 's/1000/999/' etc/useradd 
+#1479611297
+./configure --sysconfdir=/etc --with-group-name-max-length=32
+#1479611465
+sudo mv -v /usr/bin/passwd /bin
+#1479611485
+sudo grpconv 
+#1479611493
+sudo pwconv
+#1479611543
+sudo sed -i 's/yes/no/' /etc/default/useradd 
+#1479612035
+tar -xf sudo-1.8.12.tar.gz 
+#1479612037
+cd sudo-1.8.12
+#1479612082
+./configure --prefix=/usr --libexecdir=/usr/lib --with-secure-path --with-all-insults --with-env-editor --docdir=/usr/share/doc/sudo-1.8.12 --with-passprompt="[sudo] password for %p: "
+#1479613362
+tar -xf gst-plugins-base-0.10.36.tar.xz 
+#1479613371
+cd gst-plugins-base-0.10.36
+#1479613439
+./configure --prefix=/usr/local --disable-static
+#1479614141
+./configure
+#1479614541
+export qt4dir=/opt/X_Lib/qt-4.8.6 qt4link=/opt/X_Lib/qt4 
+#1479614614
+./configure -prefix $qt4dir -sysconfdir /etc/xdg -opensource -release -system-sqlite -no-phonon -no-phonon-backend -no-nis -nomkae demos -nomake exemples -optimized-qmake -dbus-linked -openssl-linked 
+#1479614769
+./configure -prefix $qt4dir -sysconfdir /etc/xdg -opensource -release -system-sqlite -no-phonon -no-phonon-backend -no-nis -nomake demos -nomake exemples -optimized-qmake -dbus-linked -openssl-linked 
+#1479615013
+./configure -prefix $qt4dir -sysconfdir /etc/xdg -opensource -release  -no-phonon -no-phonon-backend -no-nis -nomake demos -nomake exemples -optimized-qmake -dbus-linked -openssl-linked 
+#1479615238
+make 
+#1479620308
+tar -xf qt-everywhere-opensource-src-4.8.6.tar.gz 
+#1479620323
+cd qt-everywhere-opensource-src-4.8.6
+#1479620567
+./qt4.sh 
+#1479620815
+make -j5
+#1479626171
+sudo make install 
+#1479626828
+./qt4-set.sh 
+#1479628743
+cd polkit-0.112
+#1479628830
+./configure --prefix=/usr/local --with-authfw=shadow --disable-static --sysconfdir=/etc --localstatedir=/var
+#1479629428
+pushd /home/tmp/Lfs/Blfs/blfs-package/;echo -en "\e]P7ffffff"
+#1479629437
+cd polkit-0.112
+#1479629441
+./configure --prefix=/usr/local --with-authfw=shadow --disable-static --sysconfdir=/etc --localstatedir=/var
+#1479629455
+make 
+#1479629483
+sudo make install 
+#1479629437
+cd polkit-0.112
+#1479629441
+./configure --prefix=/usr/local --with-authfw=shadow --disable-static --sysconfdir=/etc --localstatedir=/var
+#1479629455
+make 
+#1479629483
+sudo make install 
+#1479631659
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479631754
+sudo make uninstall 
+#1479631832
+cp ../blfs-sh/qt4-install.sh qt-everywhere-opensource-src-4.8.6
+#1479632332
+tar -xf qt-everywhere-opensource-src-4.8.6.tar.gz 
+#1479632373
+cd qt-everywhere-opensource-src-4.8.6
+#1479632444
+./qt4-install.sh 
+#1479631590
+pushd /home/tmp/Lfs/Blfs/blfs-book/
+#1479631597
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479636118
+read password
+#1479636133
+stty echo 
+#1479654271
+tar -xf sqlite-autoconf-3080802.tar.gz 
+#1479654276
+cd sqlite-autoconf-3080802
+#1479654459
+./configure --prefix=/usr --disable-static CFLAGS="-g -O2 -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_COLUMN_METADATA=1 -DSQLITE_ENABLE_UNLOCK_NOTIFY=1 -DSQLITE_SECURE_DELETE=1" 
+#1479654470
+make 
+#1479654506
+sudo make install 
+#1479631597
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479636118
+read password
+#1479636133
+stty echo 
+#1479653237
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479653253
+tar -xf libevent-2.0.22-stable.tar.gz 
+#1479653258
+cd libevent-2.0.22-stable
+#1479653282
+./configure --prefix=/usr/local --disable-static 
+#1479653425
+tar -xf libvpx-v1.3.0.tar.xz 
+#1479653432
+cd libvpx-v1.3.0
+#1479653527
+sed -i 's/cp -p/cp/' build/make/Makefile 
+#1479653537
+chmod -v 644 vpx/*.h 
+#1479653612
+mkdir ../libvpx-build;cd libvpx-build
+#1479653621
+cd ../libvpx-build/
+#1479653664
+../libvpx-v1.3.0/configure --prefix=/usr/local --enable-shared --disable-static 
+#1479653686
+make 
+#1479653816
+sudo make install 
+#1479653970
+tar -xf nss-3.17.4.tar.gz 
+#1479653974
+cd nss-3.17.4
+#1479653995
+patch -Np1 -i ../nss-3.17.4-standalone-1.patch 
+#1479653998
+cd nss/
+#1479654126
+make BUILD_OPT=1 NSPR_INCLUDE_DIR=/usr/include/nspr USE_SYSTEM_ZLIB=1 ZLIB_LIBS=-lz $([ $(uname -m) = x86_64 ] && echo USE_64=1) $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1) -j1
+#1479654829
+cd ../dist/
+#1479654869
+sudo install -v -m755 Linux*/lib/*.so /usr/local/lib
+#1479654911
+sudo install -v -m644 Linux*/lib/{*.chk,libcrmf.a} /usr/local/lib
+#1479654945
+sudo install -v -m755 -d /usr/local/include/nss
+#1479655000
+sudo cp -v -RL {public,private}/nss/* /usr/local/include/nss
+#1479655121
+sudo chmod -v 644 /usr/local/include/nss/* 
+#1479655145
+sudo install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/local/bin
+#1479655176
+sudo install -v -m644 Linux*/lib/pkgconfig/nss.pc /usr/local/lib/pkgconfig
+#1479655383
+cd mozilla-release/
+#1479655393
+vim mozconfig
+#1479655658
+vim mozconfig 
+#1479655732
+mkae -f client.mk
+#1479655740
+make -f client.mk
+#1479656598
+tar -xf firefox-36.0.source.tar.bz2 
+#1479656792
+make -f client.mk 
+#1479659357
+sudo mkdir -pv /usr/share/pixmaps
+#1479659452
+sudo -sfv /usr/local/lib/firefox-36.0/browser/icons/mozicon128.png /usr/share/pixmaps/firefox.png
+#1479659461
+sudo ln -sfv /usr/local/lib/firefox-36.0/browser/icons/mozicon128.png /usr/share/pixmaps/firefox.png
+#1479657270
+make -f client.mk 
+#1479658304
+make -f client.mk
+#1479653033
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479661109
+sudo mount -t vfat -o rw,flush,utf8=1,uid=$UID /dev/sdb1 /media/tmp/
+#1479662915
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479662926
+tar -xf firefox-36.0.source.tar.bz2 
+#1479663316
+make -f client.mk 
+#1479663620
+make -f client.mk ;cs
+#1479728311
+echo "\e]P7ffffff";pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479728342
+pushd /home/tmp/Lfs/Blfs/blfs-package/;echo -en "\e]P7ffffff"
+#1479729080
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479728801
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479728823
+tar -xf firefox-36.0.source.tar.bz2 
+#1479729197
+cd mozilla-release/
+#1479729291
+make -f client.mk 
+#1479731447
+sudo make -f client.mk install INSTALL_SDK=
+#1479731521
+sudo chown -R 0:0 /usr/local/lib/firefox-36.0 
+#1479731546
+sudo mkdir -pv /usr/local/lib/mozilla/plugins 
+#1479731619
+sudo ln -sfv ../../mozilla/plugins /usr/local/lib/firefox-36.0/browser 
+#1479731678
+sudo ln -sfv /usr/local/lib/firefox-36.0/browser/icons/mozicon128.png /usr/share/pixmaps/firefox.png 
+#1479733747
+tar -xf emacs-24.4.tar.xz 
+#1479733760
+cd emacs-24.4
+#1479733810
+./configure --prefix=/usr/local --with-gif=no --localstatedir=/var 
+#1479733863
+make bootstrap
+#1479734724
+sudo make install 
+#1479735019
+sudo chown -R -v root:root /usr/local/share/emacs/24.4
+#1479735047
+sudo gtk-update-icon-cache -qf /usr/share/icons/hicolor
+#1479735077
+ls
+#1479735437
+sudo mount -t vfat -o rw,flush,nouser,uid=$UID,utf8=1 /dev/sdb1 /media/tmp 
+#1479736138
+echo ${PWD##*/}
+#1479737542
+for i in $(ls -F|grep -E '/$');do [ -d "$i" ]&&cd $i&& if [ -f config.log ];then cp -fv config.log ../../blfs-log/${PWD##*/}-config.log&&cd ..&&sudo rm -r "$i";else echo ${PWD##*/} is not config >>../../blfs-log/blfs-package.log;cd ..;fi;done
+#1479737608
+for i in $(ls -F|grep -E '/$');do [ -d "$i" ]&&cd $i&& if [ -f config.log ];then \cp -fv config.log ../../blfs-log/${PWD##*/}-config.log&&cd ..&&sudo rm -r "$i";else echo ${PWD##*/} is not config >>../../blfs-log/blfs-package.log;cd ..;fi;done
+#1479663316
+make -f client.mk 
+#1479663620
+make -f client.mk ;cs
+#1479728311
+echo "\e]P7ffffff";pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479728342
+pushd /home/tmp/Lfs/Blfs/blfs-package/;echo -en "\e]P7ffffff"
+#1479729080
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479728823
+tar -xf firefox-36.0.source.tar.bz2 
+#1479729197
+cd mozilla-release/
+#1479729291
+make -f client.mk 
+#1479731447
+sudo make -f client.mk install INSTALL_SDK=
+#1479731521
+sudo chown -R 0:0 /usr/local/lib/firefox-36.0 
+#1479731546
+sudo mkdir -pv /usr/local/lib/mozilla/plugins 
+#1479731619
+sudo ln -sfv ../../mozilla/plugins /usr/local/lib/firefox-36.0/browser 
+#1479731678
+sudo ln -sfv /usr/local/lib/firefox-36.0/browser/icons/mozicon128.png /usr/share/pixmaps/firefox.png 
+#1479733747
+tar -xf emacs-24.4.tar.xz 
+#1479733760
+cd emacs-24.4
+#1479733810
+./configure --prefix=/usr/local --with-gif=no --localstatedir=/var 
+#1479733863
+make bootstrap
+#1479735019
+sudo chown -R -v root:root /usr/local/share/emacs/24.4
+#1479735047
+sudo gtk-update-icon-cache -qf /usr/share/icons/hicolor
+#1479735077
+ls
+#1479735437
+sudo mount -t vfat -o rw,flush,nouser,uid=$UID,utf8=1 /dev/sdb1 /media/tmp 
+#1479736138
+echo ${PWD##*/}
+#1479737542
+for i in $(ls -F|grep -E '/$');do [ -d "$i" ]&&cd $i&& if [ -f config.log ];then cp -fv config.log ../../blfs-log/${PWD##*/}-config.log&&cd ..&&sudo rm -r "$i";else echo ${PWD##*/} is not config >>../../blfs-log/blfs-package.log;cd ..;fi;done
+#1479737608
+for i in $(ls -F|grep -E '/$');do [ -d "$i" ]&&cd $i&& if [ -f config.log ];then \cp -fv config.log ../../blfs-log/${PWD##*/}-config.log&&cd ..&&sudo rm -r "$i";else echo ${PWD##*/} is not config >>../../blfs-log/blfs-package.log;cd ..;fi;done
+#1479738847
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479738860
+tar -xf zsh-5.0.7.tar.bz2 
+#1479738873
+cd zsh-5.0.7
+#1479738899
+tar --strip-components=1 -xf ../zsh-5.0.7-doc.tar.bz2 
+#1479738935
+./configure --prefix=/usr --bindir=/bin --sysconfdir=/etc/zsh --enable-etcdir=/etc/zsh 
+#1479739054
+makeinfo Doc/zsh.texi --plaintext -o Doc/zsh.txt 
+#1479739084
+makeinfo Doc/zsh.text --html -o Doc/html 
+#1479739093
+makeinfo Doc/zsh.texi --html -o Doc/html 
+#1479739145
+makeinfo Doc/zsh.texi --html --no-split --no-headers -o Doc/zsh.html
+#1479739201
+texi2pdf Doc/zsh.texi -o Doc/zsh.pdf 
+#1479739273
+sudo make infodir=/usr/share/info install.info 
+#1479739316
+sudo install -dv -m755 /usr/share/doc/zsh-5.0.7/html
+#1479739342
+sudo install -v -m644 Doc/html/* /usr/share/doc/zsh-5.0.7/html
+#1479739399
+sudo install -v -m644 Doc/zsh.{html,txt} /usr/share/doc/zsh-5.0.7 
+#1479739435
+sudo make htmldir=/usr/share/doc/zsh-5.0.7/html install.html 
+#1479739593
+sudo mv -v /usr/lib/libgdbm.so.* /lib
+#1479739631
+sudo ln -sfv ../../lib/libgdbm.so.3 /usr/lib/libgdbm.so 
+#1479739908
+tar -xf unrarsrc-5.2.6.tar.gz 
+#1479739913
+cd unrar
+#1479739943
+make -f makefile 
+#1479739987
+sudo install -v -m755 unrar /usr/bin
+#1479740317
+tar -xf net-tools-CVS_20101030.tar.gz 
+#1479740328
+cd net-tools-CVS_20101030
+#1479740531
+wget http://www.linuxfromscratch.org/patches/blfs/7.7/net-tools-CVS_20101030-remove_dups-1.patch
+#1479740553
+patch -Np1 -i ../net-tools-CVS_20101030-remove_dups-1.patch 
+#1479740562
+yes "" | make config
+#1479740608
+sudo make update 
+#1479740689
+wget http://mama.indstate.edu/users/ice/tree/src/tree-1.7.0.tgz
+#1479740697
+tar -xf tree-1.7.0.tgz 
+#1479740700
+cd tree-1.7.0
+#1479740730
+sudo make MANDIR=/usr/share/man/man1 install 
+#1479740743
+sudo chmod -v 644 /usr/share/man/man1/tree.1 
+#1479740771
+tar -xf time-1.7.tar.gz 
+#1479740775
+cd time-1.7
+#1479740808
+sed -i 's/$(ACLOCAL)//' Makefile.in
+#1479740815
+sed -i 's/lu", ptok ((UL) resp->ru.ru_maxrss)/ld", resp->ru.ru_maxrss/' time.c
+#1479740832
+./configure --prefix=/usr --infodir=/usr/share/info 
+#1479740923
+tar -xf links-2.9.tar.bz2 
+#1479740926
+cd links-2.9
+#1479740959
+./configure --prefix=/usr --mandir=/usr/share/man 
+#1479741043
+sudo make install
+#1479741055
+sudo install -dv -m755 /usr/share/d
+#1479741069
+sudo install -dv -m755 /usr/share/doc/links-2.9 
+#1479741093
+sudo install -v -m644 doc/links_cal/* KEYS BRAILLE_HOWTO /usr/share/doc/links-2.9 
+#1479741182
+sudo uninstall 
+#1479741188
+sudo make uninstall 
+#1479741203
+./configure --prefix=/usr --mandir=/usr/share/man --enable-graphics 
+#1479741441
+tar -xf ConsoleKit-0.4.6.tar.xz 
+#1479741445
+cd ConsoleKit-0.4.6
+#1479741496
+./configure --prefix=/usr/local --sysconfdir=/etc --localstate=/var --enable-udev-acl
+#1479741702
+sudoe /usr/local/lib/ConsoleKit/run-session.d/pam-foreground-compat.bk
+#1479741806
+tar -xf libcroco-0.6.8.tar.xz 
+#1479741810
+cd libcroco-0.6.8
+#1479741821
+./configure --prefix=/usr/local --disable-static 
+#1479742101
+vim lxdm.sh
+#1479742329
+cd lxdm-0.5.0
+#1479742562
+./configure --prefix=$xorg_lib --sysconfdir=/etc --disable-pam
+#1479742707
+tar -xf Linux-PAM-1.1.8-docs.tar.bz2 
+#1479742735
+tar -xf Linux-PAM-1.1.8.tar.bz2 
+#1479742738
+cd Linux-PAM-1.1.8
+#1479742834
+./configure --prefix=/usr/local --sysconfdir=/etc --libdir=/usr/lib --enable-securedir=/lib/security --docdir=/usr/share/doc/Linux-PAM-1.1.8 
+#1479742965
+sudo install -v -m755 -d /etc/pam.d
+#1479743053
+sudo chmod -v 4755 /usr/local/sbin/unix_chkpwd 
+#1479743088
+for file in pam pam_misc pamc; do sudo mv -v /usr/lib/lib${file}.so.* /lib ; sudo ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib{file}.so; done
+#1479743429
+sudo ln -sfv ../../lib/libpam.so.0.83.1 /usr/lib/libpam.so
+#1479743478
+sudo ln -sfv ../../libpam_misc.so.0.82.0 /usr/lib/libpam_misc.so 
+#1479743503
+sudo ln -sfv ../../lib/libpamc.so.0.82.1 /usr/lib/libpamc.so 
+#1479743632
+sudo ln -sfv ../../lib/libpam_misc.so.0.82.0 /usr/lib/libpam_misc.so 
+#1479744519
+tar -xf lxdm-0.5.0.tar.xz 
+#1479744700
+./lxdm.sh 
+#1479744867
+./configure --prefix=$xorg_lib --sysconfdir=/etc --with-pam
+#1479744871
+make 
+#1479744883
+sudo make install 
+#1479744897
+tar -xf llvm-3.5.1.src.tar.xz 
+#1479744957
+vim ~/.dmrc
+#1479745020
+cd llvm-3.5.1.src
+#1479745030
+vim llvm.sh
+#1479745108
+./llvm.sh 
+#1479745108
+./llvm.sh 
+#1479747802
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479749134
+tar -xf leafnode-1.11.5.tar.bz2 
+#1479749138
+cd leafnode-1.11.5
+#1479749501
+sh ./configure --prefix=$xfce --sysconfdir=/etc 
+#1479749511
+make 
+#1479749550
+sudo groupadd news
+#1479749629
+sudo useradd -s /bin/false -g news news
+#1479749655
+sudo make install 
+#1479749905
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479814406
+sudo mount /dev/sdb2 /mnt/
+#1479814697
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479814761
+tar -xf fcitx-4.2.9.tar.xz 
+#1479814771
+cd fcitx-4.2.9
+#1479814813
+mkdir build
+#1479814815
+cd build/
+#1479814872
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local 
+#1479817928
+gcc c.c -shared -fPIC -o libc.so
+#1479828446
+rm -rf qlo10k1 Makefile gitcompile 
+#1479828469
+vim alsa-tools.sh
+#1479828601
+./alsa-tools.sh 
+#1479745020
+cd llvm-3.5.1.src
+#1479745030
+vim llvm.sh
+#1479745108
+./llvm.sh 
+#1479745108
+./llvm.sh 
+#1479749134
+tar -xf leafnode-1.11.5.tar.bz2 
+#1479749138
+cd leafnode-1.11.5
+#1479749501
+sh ./configure --prefix=$xfce --sysconfdir=/etc 
+#1479749550
+sudo groupadd news
+#1479749629
+sudo useradd -s /bin/false -g news news
+#1479814406
+sudo mount /dev/sdb2 /mnt/
+#1479814761
+tar -xf fcitx-4.2.9.tar.xz 
+#1479814771
+cd fcitx-4.2.9
+#1479814813
+mkdir build
+#1479814815
+cd build/
+#1479814872
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local 
+#1479817928
+gcc c.c -shared -fPIC -o libc.so
+#1479825195
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479825221
+tar -xf simplescreenrecoreder.tar.bz2 
+#1479825230
+cd simplescreenrecoreder/ssr/
+#1479825442
+tar -xf ffmpeg-2.5.4.tar.bz2 
+#1479825739
+tar -xf fribidi-0.19.6.tar.bz2 
+#1479825742
+cd fribidi-0.19.6
+#1479825763
+sed -i "s|glib/gstrfuncs\.h|glib.h|" charset/fribidi-char-sets.c 
+#1479825769
+sed -i "s|glib/gmem\.h|glib.h|"      lib/mem.h
+#1479825778
+./configure --prefix=/usr/local 
+#1479825835
+tar -xf libass-0.12.1.tar.xz 
+#1479825840
+cd libass-0.12.1
+#1479825908
+tar -xf fdk-aac-0.1.3.tar.gz 
+#1479825912
+cd fdk-aac-0.1.3
+#1479826040
+tar -xf lame-3.99.5.tar.gz 
+#1479826084
+./configure --prefix=/usr/local --enable-mp3rtp --disable-static
+#1479826137
+cd lame-3.99.5
+#1479826146
+sudo make uninstall 
+#1479826181
+sudo make pkghtmldir=/usr/share/doc/lame-3.99.5 install 
+#1479826217
+tar -xf libtheora-1.1.1.tar.xz 
+#1479826220
+cd libtheora-1.1.1
+#1479826235
+sed -i 's/png_\(sizeof\)/\1/g' examples/png2theora.c
+#1479826249
+
+#1479826275
+./configure --prefix=/usr/local --disable-static 
+#1479826337
+for E in *;do
+#1479826398
+cd examples/.libs/
+#1479826407
+for E in *;do   sudo install -v -m755 $E /usr/bin/theora_${E}; done
+#1479826627
+tar -xf x264-snapshot-20141208-2245-stable.tar.bz2 
+#1479826630
+cd x264-snapshot-20141208-2245-stable
+#1479826666
+./configure --prefix=/usr/local --enable-shared --disable-cli 
+#1479826806
+tar -xf SDL-1.2.15.tar.gz 
+#1479826808
+cd SDL-1.2.15
+#1479826833
+sed -i '/_XData32/s:register long:register _Xconst long:' src/video/x11/SDL_x11sym.h 
+#1479826868
+./configure --prefix=/usr/local --disable-static --disable-sdl-dlopen 
+#1479826944
+sudo make install 
+#1479827018
+sudo install -v -m644 docs/html/*.html /usr/local/share/doc/SDL-1.2.15/html
+#1479827412
+tar -xf libvdpau-va-gl-0.3.4.tar.gz 
+#1479827418
+cd libvdpau-va-gl-0.3.4
+#1479827434
+mkdir build;cd build
+#1479827511
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$XORG_PREFIX ..
+#1479828187
+tar -xf alsa-utils-1.0.28.tar.bz2 
+#1479828190
+cd alsa-utils-1.0.28
+#1479828245
+./configure --disable-alsaconf --disable-xmlto
+#1479828252
+make 
+#1479828414
+tar -xf alsa-tools-1.0.28.tar.bz2 
+#1479828420
+cd alsa-tools-1.0.28
+#1479828433
+bash -e 
+#1479828685
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479828696
+cd alsa-tools-1.0.28
+#1479828972
+./alsa-tools.sh
+#1479814326
+sudo mount -t vfat -o rw,flush,nouser,uid=$UID,utf8=1 /dev/sdb1 /media/tmp 
+#1479828187
+tar -xf alsa-utils-1.0.28.tar.bz2 
+#1479828245
+./configure --disable-alsaconf --disable-xmlto
+#1479828420
+cd alsa-tools-1.0.28
+#1479828696
+cd alsa-tools-1.0.28
+#1479828953
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479829200
+./alsa-tools.sh
+#1479829240
+bash -e 
+#1479829323
+tar -xf alsa-tools-1.0.28.tar.bz2 
+#1479829474
+tar -xf alsa-firmware-1.0.28.tar.bz2 
+#1479829486
+cd alsa-firmware-1.0.28
+#1479829495
+./configure --prefix=/usr 
+#1479829638
+tar -xf alsa-utils-1.0.28
+#1479829644
+cd alsa-utils-1.0.28
+#1479829715
+./configure --disable-alsaconf --disable-xmlto 
+#1479829740
+make 
+#1479829763
+sudo make install 
+#1479829864
+sudo gpasswd lfs audio
+#1479829877
+sudo gpasswd -a lfs audio
+#1479899863
+pushd /home/tmp/Lfs/Blfs/blfs-book/
+#1479899876
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479901675
+sudo make modules_install 
+#1479901738
+sudo make firmware_install 
+#1479901782
+sudo cp -ibvL arch/x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd 
+#1479901808
+sudo cp -ibvL .config /boot/config-2016-11-23
+#1479908233
+lynx index.html 
+#1479902216
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479828696
+cd alsa-tools-1.0.28
+#1479828972
+./alsa-tools.sh
+#1479814326
+sudo mount -t vfat -o rw,flush,nouser,uid=$UID,utf8=1 /dev/sdb1 /media/tmp 
+#1479828187
+tar -xf alsa-utils-1.0.28.tar.bz2 
+#1479828245
+./configure --disable-alsaconf --disable-xmlto
+#1479828420
+cd alsa-tools-1.0.28
+#1479828696
+cd alsa-tools-1.0.28
+#1479829200
+./alsa-tools.sh
+#1479829240
+bash -e 
+#1479829323
+tar -xf alsa-tools-1.0.28.tar.bz2 
+#1479829474
+tar -xf alsa-firmware-1.0.28.tar.bz2 
+#1479829486
+cd alsa-firmware-1.0.28
+#1479829495
+./configure --prefix=/usr 
+#1479829638
+tar -xf alsa-utils-1.0.28
+#1479829644
+cd alsa-utils-1.0.28
+#1479829715
+./configure --disable-alsaconf --disable-xmlto 
+#1479829864
+sudo gpasswd lfs audio
+#1479829877
+sudo gpasswd -a lfs audio
+#1479899863
+pushd /home/tmp/Lfs/Blfs/blfs-book/
+#1479899876
+pushd /home/tmp/Lfs/Blfs/blfs-book/;lynx index.html 
+#1479901675
+sudo make modules_install 
+#1479901738
+sudo make firmware_install 
+#1479901782
+sudo cp -ibvL arch/x86_64/boot/bzImage /boot/vmlinuz-3.19-lfs-7.7-systemd 
+#1479901808
+sudo cp -ibvL .config /boot/config-2016-11-23
+#1479902289
+tar -xf mplayer-2015-02-20.tar.xz `
+#1479902294
+tar -xf mplayer-2015-02-20.tar.xz 
+#1479902299
+cd mplayer-2015-02-20
+#1479902312
+sed -i 's:libsmbclient.h:samba-4.0/&:' configure stream/stream_smb.c
+#1479903014
+sudo make install
+#1479903129
+sudo ln -sfv /usr/local/share/icons/hicolor/48x48/apps/mplayer.png /usr/share/pixmaps/mplayer.png
+#1479903155
+sudo ln -sfv /usr/local/share/icons/hicolor/48x48/apps/emacs.png /usr/share/pixmaps/emacs.png
+#1479903203
+sudo install -v -m644 etc/codecs.conf /etc/mplayer/
+#1479903221
+sudo install -v -m644 etc/*.conf /etc/mplayer/
+#1479903238
+sudo gtk-update-icon-cache
+#1479903250
+sudo update-desktop-database
+#1479903299
+tar -xf Clearlooks-1.6.tar.bz2 -C /usr/local/share/mplayer/skins/
+#1479903304
+sudo tar -xf Clearlooks-1.6.tar.bz2 -C /usr/local/share/mplayer/skins/
+#1479903330
+sudo ln -sfvn Clearlooks /usr/local/share/mplayer/skins/default
+#1479904090
+tar -xf gtksourceview-2.10.5.tar.gz 
+#1479904094
+cd gtksourceview-2.10.5
+#1479904183
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1479904202
+tar -xf ffmpeg-2.5.4.tar.bz2 
+#1479904209
+cd ffmpeg-2.5.4
+#1479904255
+sed -i 's/-lflite"/-lflite -lasound"/' configure 
+#1479904308
+./configure --prefix=/usr/local --enable-version3 --enable-nonfree --disable-static --enable-shared --enable-debug --enable-libass --enable-libfdk-aac --enable-libmp3lame --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-x11grab --docdir=/usr/share/doc/ffmpeg-2.5.4 
+#1479904528
+./configure --prefix=/usr/local --enable-version3 --enable-nonfree --disable-static --enable-shared --enable-debug --enable-libass --enable-libfdk-aac --enable-libmp3lame --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-x11grab --docdir=/usr/share/doc/ffmpeg-2.5.4 --enable-gpl
+#1479905271
+gcc tools/qt-faststart.c -o tools/qt-faststart
+#1479905322
+sudo install -v -m755 tools/qt-faststart /usr/local/bin
+#1479905402
+sudo install -dv -m755 /usr/local/share/doc/ffmpeg-2.5.4 
+#1479905409
+sudo install -dv -m644 doc/*.txt /usr/local/share/doc/ffmpeg-2.5.4 
+#1479905416
+sudo install -v -m644 doc/*.txt /usr/local/share/doc/ffmpeg-2.5.4 
+#1479905617
+./configure --prefix=/usr/local --confdir=/etc/mplayer --enable-dynamic-plugins --enable-menu --enable-gui 
+#1479906661
+./configure --prefix=/usr/local --mandir=/usr/share/man --enable-shared --disable-static CFLAG"-g O2 $([ $(uname -m) = x86_64 ] && echo -fPIC)" 
+#1479906680
+./configure --prefix=/usr/local --mandir=/usr/share/man --enable-shared --disable-static CFLAG="-g O2 $([ $(uname -m) = x86_64 ] && echo -fPIC)" 
+#1479906751
+tar -xf lua-5.3.0.tar.gz 
+#1479906756
+cd lua-5.3.0
+#1479906770
+patch -Np1 -i ../lua-5.3.0-shared_library-1.patch 
+#1479906792
+sed -i '/#define LUA_ROOT/s:/usr/local/:/usr/:' src/luaconf.h
+#1479906812
+make linux
+#1479906939
+sudo make INSTALL_TOP=/usr/local TO_LIB="liblua.so liblua.so.5.3 liblua.so.5.3.0" INSTALL_DATA="cp -d" INSTALL_MAN=/usr/share/man/man1 install 
+#1479906963
+sudo mkdir -pv /usr/local/share/doc/lua-5.3.0 
+#1479906981
+sudo cp -v doc/*.{html,css,gif,png} /usr/local/share/doc/lua-5.3.0
+#1479907000
+sudoe /usr/local/lib/pkgconfig/lua.pc
+#1479907813
+vim vlc.sh
+#1479908044
+wget http://www.linuxfromscratch.org/patches/blfs/7.7/libmad-0.15.1b-fixes-1.patch
+#1479908070
+tar -xf libmad-0.15.1b.tar.gz 
+#1479908073
+cd libmad-0.15.1b
+#1479908085
+patch -Np1 -i ../libmad-0.15.1b-fixes-1.patch 
+#1479908095
+sed "s@AM_CONFIG_HEADER@AC_CONFIG_HEADERS@g" -i configure.ac
+#1479908109
+touch NEWS AUTHORS ChangeLog
+#1479908115
+autoreconf -fi
+#1479908148
+./configure --prefix=/usr/local --disable-static 
+#1479908190
+sudoe /usr/local/lib/pkgconfig/mad.pc
+#1479908347
+tar -xf a52dec-0.7.4.tar.gz 
+#1479908349
+cd a52dec-0.7.4
+#1479908390
+./configure --prefix=/usr/local --mandir=/usr/share/man --enable-sahared --disable-static CFLAGS="-g -O2 $([ $(uname -m) = x86_64 ] && echo -fPIC)"
+#1479908411
+sudo make install 
+#1479908432
+sud ocp liba52/a52_internal.h /usr/local/include/a52dec
+#1479908442
+sudo cp liba52/a52_internal.h /usr/local/include/a52dec
+#1479908476
+tar -xf vlc-2.1.5.tar.xz 
+#1479908484
+cp vlc.sh vlc-2.1.5
+#1479908492
+cd vlc-2.1.5
+#1479908509
+./vlc.sh 
+#1479908580
+make 
+#1480102305
+ip link set wlp3s0 up
+#1480102323
+ip link show wlp3s0
+#1480102347
+iw dev wlp3s0 scan |less
+#1480102661
+iw dev wlp3s0 scan|grep -i 'ssid'
+#1480102887
+wpa_supplicant -i wlp3s0 -c <(wpa_passphrase "MERCURY_A6E2" "Zhangtao.0839.") -B 
+#1480102919
+iw dev wlp3s0 link 
+#1480102939
+dhcpcd wlp3s0 
+#1480102954
+ping -c 2 www.baidu.com
+#1480103308
+wpa_passphrase "MERCURY_A6E2" "Zhangtao.0839." >> /etc/wpa_supplicant/wpa_supplicant.conf
+#1480103875
+iw dev wlp3s0 scan|grep -i 'ssid'
+#1480103603
+cd libexif-0.6.21
+#1480103650
+pushd /home/tmp/Lfs/Blfs/blfs-package/
+#1480103688
+tar -xf fcitx/fcitx-4.2.9.tar.xz 

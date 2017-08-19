@@ -1,0 +1,25 @@
+git clone https://git.code.sf.net/p/gptfdisk/code gptfdisk-code
+git clone https://github.com/vim/vim.git
+git clone https://github.com/opendesktop/opendesktop-app
+git clone https://git.archlinux.org/arch-install-scripts.git
+git clone https://github.com/bvbfan/Audio-thumbs
+git clone git://git.xfce.org/apps/thunar-thumbnailers
+git clone http://git.imagemagick.org/repos/ImageMagick.git
+git clone http://git.imagemagick.org/repos/ImageMagick.git
+git clone https://github.com/bedekelly/cloneall
+git clone https://github.com/sashavasko/afterstep-devel
+git clone   https://github.com/Floby/TermKit Floby-TermKit
+git clone https://github.com/Floby/TermKit Floby-TermKit
+git clone https://github.com/asciinema/asciinema-player
+git clone https://github.com/bedekelly/playall
+git clone https://github.com/unconed/TermKit
+git clone https://github.com/stjerm/stjerm
+git clone https://github.com/technomancy/leiningen
+git clone https://github.com/Floby/TermKit.git --recursive
+git clone https://github.com/Floby/TermKit.git --recursive
+git clone https://github.com/google/code-prettify
+git clone https://github.com/mzlogin/chinese-copywriting-guidelines
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/fcitx-fbterm
+git clone https://github.com/felixonmars/aur3-mirror/tree/master/fcitx-fbterm.git
+git fetch  https://github.com/Floby/TermKit Floby-TermKit
+git fetch  https://github.com/Floby/TermKit.git Floby-TermKit

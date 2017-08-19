@@ -1,0 +1,25 @@
+git config --global color.ui true
+git config --global alias.cm commit
+git config --global alias.ck checkout
+git config --global alias.br branch
+git config --global alias.st status
+git rev-parse --git-dir
+git rev-parse --show-toplevel
+git rev-parse --show-prefix
+git rev-parse --show-cdup
+git config -a
+git config -e
+git config -e --global
+git commit -m "test commit" --allow-empty 
+git log --pretty=fuller 
+git log --stat 
+git commit -m "Append a nice line."
+git add welcome.txt 
+git status 
+git diff HEAD 
+git diff --cached 
+git commit -m "which version checked in?" 
+git log --pretty=oneline 
+git status -s
+git diff
+git checkout -- welcome.txt

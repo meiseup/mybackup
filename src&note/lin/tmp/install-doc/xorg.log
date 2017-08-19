@@ -1,0 +1,54 @@
+xorg-server
+xf86-video-intel lib32-mesa-libgl libva-intel-driver libva mesa xf86-input-synaptics alsa-utils
+
+
+nvidia-xorg
+nvidia
+pacman -Rdd libgl
+配置
+
+安装完驱动之后，您需要创建Xorg的配置文件。您可以运行一次测试来检验没有配置文件Xorg能否正确运行。但是，您可能需要创建配置文件/etc/X11/xorg.conf来调整Xorg运行时的一些变量。您可以用nvidia-xconfig配置工具来生成这些文件，也可以手动创建。假如您是手动创建的话，它可以是一个最小的配置文件(也就是意味着它仅仅把一些基础的选项传给Xorg服务器)，或者包含一些自定义的配置来绕开Xorg的自动发现或者是预配置的选项。
+自动配置
+
+英伟达的软件包已经包含一个自动配置的工具来帮助您创建Xorg的配置文件(xorg.conf)您可以通过运行下面的命令来实现自动配置：
+
+# nvidia-xconfig
+
+当Xorg的配置文件xorg.conf不存在时，这条命令会自动检测您的硬件，并创建文件/etc/X11/xorg.conf。假如配置文件已经存在的话，它会进行一些编辑，以方便在Xorg运行时能成功载入英伟达的专有驱动。
+
+假如您想载入DRI(Direct Rendering Infrastructure)，确定已经把您的配置文件修改为：
+
+#    Load        "dri"
+
+再一次检查您的配置文件/etc/X11/xorg.conf中的默认色深，水平同步，垂直刷新和分辨率是否正确，不正确的配置可能会损害您的硬件，请仔细进行检查。
+警告: 可能在Xorg-server 1.8下仍旧不能正常工作
+最小配置模式
+
+用根用户创建一个基本的配置文件/etc/X11/xorg.conf：
+
+# vi /etc/X11/xorg.conf
+
+把英伟达的驱动添加到配置文件里面去：
+
+Section "Device"
+   Identifier     "Device0"
+   Driver         "nvidia"
+   VendorName     "NVIDIA Corporation"
+EndSection
+
+小贴士: 假如您已经预先安装了开源驱动nouveau，请确定已经从/etc/mkinitcpio.conf里面去除"nouveau"
+
+
+makepkg
+pacman -U *.xz
+
+
+# systemctl enable sddm.service
+$ ls -l /etc/systemd/system/display-manager.service
+
+[...] /etc/systemd/system/display-manager.service -> /usr/lib/systemd/system/sddm.service
+
+fcitx fcitx-qt4 fcitx-qt5 fcitx-gtk2 fcitx-gtk3 fcitx-configtool
+
+
+

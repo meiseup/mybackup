@@ -1,0 +1,11 @@
+    1  2016-06-18 20:18:43 dnfi deluge
+    2  2016-06-18 20:23:40 dnfi qbittorrent
+    3  2016-06-18 20:38:53 dnfi aria2
+    4  2016-07-07 18:19:48 cd ..
+    5  2016-07-08 10:53:04 fuser -m -v -u /dev/shm
+    6  2016-07-08 10:58:21 getenforce 
+    7  2016-07-08 21:37:53 dnfi qutebrowser opera
+    8  2016-07-08 21:38:43 dnfi qutebrowser opera-stable
+    9  2016-07-08 22:21:23 dnfr qupzilla
+   10  2016-07-08 22:24:24 dnfi genisoimg
+   11  2016-07-08 22:24:44 dnfi genisoimage

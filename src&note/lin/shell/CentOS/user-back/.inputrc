@@ -1,0 +1,8 @@
+
+#
+set Bell-Style Off
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set match-hidden-files On
+set enable-meta-key On
+set input-meta On

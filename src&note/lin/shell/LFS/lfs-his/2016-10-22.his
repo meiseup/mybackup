@@ -1,0 +1,42 @@
+    1  tar -xf package/binutils-2.25.tar.bz2 -C ..
+    2  tar -xf package/binutils-2.25.tar.bz2 
+    3  mkdir ../binutils-build
+    4  cd ../binutils-build/
+    5  ../binutils-2.25/configure --prefix=/tools --with=sysroot=$LFS --with-lib-path=/tools/lib --target=$LFS_TGT --disable-nls --disable-werror
+    6  ../binutils-2.25/configure --prefix=/tools --with-sysroot=$LFS --with-lib-path=/tools/lib --target=$LFS_TGT --disable-nls --disable-werror
+    7  case $(uname -m) in x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;  esac
+    8  make install
+    9  tar -xf package/mpfr-3.1.2.tar.xz -C gcc-4.9.2/
+   10  tar -xf package/mpc-1.0.2.tar.gz -C gcc-4.9.2/
+   11  tar -xf package/gmp-6.0.0a.tar.xz -C gcc-4.9.2/
+   12  tar -xf package/isl-0.12.tar.bz2 -C gcc-4.9.2/
+   13  tar -xf package/cloog-0.18.0.tar.gz -C gcc-4.9.2/
+   14  mkdir ../gcc-build
+   15  for file in $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h) ; do  cp -uv $file{ï{ï{,.orig}; sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' -e 's@/usr@/tools@g' $file.orig > $file; echo '
+   16  #undef STANDARD_STARTFILE_PREFIX_1
+   17  #undef STANDARD_STARTFILE_PREFIX_2
+   18  #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+   19  #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file;  touch $file.orig; done
+   20  for file in $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h) ; do  cp -uv $file{,.orig}; sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' -e 's@/usr@/tools@g' $file.orig > $file; echo '
+   21  #undef STANDARD_STARTFILE_PREFIX_1
+   22  #undef STANDARD_STARTFILE_PREFIX_2
+   23  #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+   24  #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file;  touch $file.orig; done
+   25  tar -xf package/gcc-4.9.2.tar.bz2 
+   26  for file in $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h) ; do  cp -uv $file{,.orig}; sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' -e 's@/usr@/tools@g' $file.orig > $file; echo '
+   27  #undef STANDARD_STARTFILE_PREFIX_1
+   28  #undef STANDARD_STARTFILE_PREFIX_2
+   29  #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
+   30  #define STANDARD_STARTFILE_PREFIX_2 ""' >> $file;  touch $file.orig; done
+   31  sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure
+   32  ../gcc-4.9.2/configure --target=$LFS_TGT --prefix=/tools --with-sysroot=$LFS --with-newlib --without-headers --with-local-prefix=/tools --whth-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libitm --disable-libquadmath --disable-libsanitizer --disable-libssp --disable-libvtv --disable-libcilkrts --disable-libstdc++-v3 --enable-languages=c,c++ 
+   33  make 
+   34  ../gcc-4.9.2/configure --target=$LFS_TGT --prefix=/tools --with-sysroot=$LFS --with-newlib --without-headers --with-local-prefix=/tools --with-native-system-header-dir=/tools/include --disable-nls --disable-shared --disable-multilib --disable-decimal-float --disable-threads --disable-libatomic --disable-libgomp --disable-libitm --disable-libquadmath --disable-libsanitizer --disable-libssp --disable-libvtv --disable-libcilkrts --disable-libstdc++-v3 --enable-languages=c,c++ 
+   35  tar -xf package/binutils-2.25.tar.bz2 
+   36  tar -xf package/isl-0.12.tar.bz2 -C binutils-2.25/
+   37  tar -xf package/cloog-0.18.0.tar.gz -C binutils-2.25/
+   38  ../binutils-2.25/configure --prefix=/tools --with-sysroot=$LFS --with-lib-path=/tools/lib --target=$LFS_TGT --disable-nls --disable-werror 
+   39  make 
+   40  case $(uname -m) in x86_64ï) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;  esac
+   41  case $(uname -m) in  x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;  esac
+   42  make install 

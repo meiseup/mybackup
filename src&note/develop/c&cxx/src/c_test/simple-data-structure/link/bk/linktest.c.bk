@@ -1,0 +1,14 @@
+/*
+* File Name: link_test.c
+* Create Date: 2017年04月10日 星期一 16时03分01秒
+*/
+#include <stdio.h>
+#include "linkutil.h"
+
+int main()
+{
+	//tmp = ins_keyword(tmp);
+	printf("keywords: %ld\n",KEYWORDS_COUNT);
+	//list_keyword(ins_keyword());
+	return 0;
+}

@@ -1,0 +1,52 @@
+/*
+* File Name: link_util.c
+* Create Date: 2017年04月10日 星期一 17时33分12秒
+*/
+#include <stdlib.h>
+#include <stdio.h>
+#include "linkutil.h"
+
+void list_keyword(KeyWord *head)
+{
+	KeyWord *tmp = NULL;
+	//	while(tmp){
+	//		printf("%d : %s\n",tmp->num,tmp->name);
+	//		tmp = tmp->next;
+	//	}
+	for(tmp = head;tmp != NULL;tmp = tmp->next) printf("%d : %s\n",tmp->num,tmp->name);
+}
+
+KeyWord *
+load_keyword()
+{
+	KeyWord *head,*tail,*tmp;
+	if(NULL == (head = (KeyWord *)malloc(NODE_LENGTH))){
+		perror("insert keyword error\n");
+		return NULL;
+	}
+	head->num = 1;
+	head->name = keywords[0];
+	tail = head;
+	head->next = NULL;
+	tail->next = NULL;
+		int i = 2,j = 1;
+		for(;i <= KEYWORDS_COUNT;i++,j++){
+			if(NULL == (tmp = (KeyWord *)malloc(NODE_LENGTH))){
+				perror("memory failed: ");
+				return NULL;
+			}
+			tmp->num = i;
+			tmp->name = keywords[j];
+			tmp->next = NULL;
+			tail->next = tmp;
+			tail = tmp;
+			tail->next = NULL;
+		}
+	return head;
+}
+
+KeyWord *
+ins_keyword(KeyWord *head)
+{
+	return head;
+}
