@@ -1,3 +1,0 @@
-AC_INIT
-AC_CHECK_HEADERS([stdlib.h ])
-AC_OUTPUT(Makefile)

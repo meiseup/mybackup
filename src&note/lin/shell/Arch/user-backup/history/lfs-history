@@ -1,6 +1,0 @@
-#1489404093
-sudo mkdir -pv $LFS/sources
-#1489404109
-sudo chmod -v a+wt $LFS/sources
-#1489404158
-wget --input-file=wget-list --continue --directory-prefix=$LFS/sources
