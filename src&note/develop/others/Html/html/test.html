@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>元素添加与移除</title>
+
+<style type="text/css">
+<!--
+ul li {
+	float: right;
+	list-style: none;
+	margin: 0px auto;
+	padding: 6px;
+}
+a{
+	text-decoration: none;
+	color: red;float:right;
+	display: inline-block;
+	margin: 0px auto;
+	padding: 3px;
+}
+a:hover {
+	text-decoration: underline;
+	color: blue;
+}
+div {
+	border: red solid 1px;
+	height: 150px;
+	width: 700px;
+	margin: 20px auto;
+	padding: 10px;
+}
+-->
+</style>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+<!--
+$();
+function addNode(){
+	var $node = $("<li>软件</li>");
+	var $node2 = $("<a href='#'>测试节点</a>");
+	var $node3 = $("<li>命令</li>");
+  $("div:eq(0) ul").append($node);
+  $("div:eq(1) p").append($node2);
+  $($node3).appendTo("#test ul");
+	$("div:eq(2)").append("<img src='a.jpg' alt='测试图片' title='测试图片' height=30' width='24' border='1px'/>");
+alert('元素添加成功！');
+}	
+
+function removeNode(){
+	$("div:eq(0) ul li:eq(0)").remove();
+	$("div:eq(1) p a:eq(0)").remove();
+  $("div#test ul li:eq(0)").remove();	
+}
+
+//-->
+</script>
+
+</head>
+
+<body>
+<div>
+  <ul>
+    <li>命令</li>
+  </ul>
+</div>
+<div>
+  <p></p>
+</div>
+<div id="test">
+  <ul>
+    <li>命令</li>
+  </ul>
+</div>
+<p>
+ <span><a href='javascript:addNode();'>添加</a></span> <span><a href='javascript:removeNode();'>移除</a></span> 
+</p>
+</body>
+</html>
