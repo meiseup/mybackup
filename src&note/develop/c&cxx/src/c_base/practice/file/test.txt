@@ -1,4 +1,0 @@
-this is test string
-this is test string2
-this is test string3
-this is test string4

@@ -1,3 +1,0 @@
-book 50
-door 10
-desk 100
