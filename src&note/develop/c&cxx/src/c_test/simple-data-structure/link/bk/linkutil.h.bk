@@ -1,0 +1,30 @@
+#ifndef __LINK_UTIL_H__
+#define __LINK_UTIL_H__
+
+#define NODE_LENGTH sizeof(KeyWord)
+#define KEYWORDS_COUNT sizeof(keywords)/sizeof(keywords[0])
+
+typedef struct _keyword{
+	int num;
+	const char *name;
+	struct _keyword *next;
+}KeyWord;
+
+static const char *keywords[] = {
+	"byte","char","short","int","long","float","double","void","sturct","union",
+	"auto","register","static","extern","return","const","typedef",
+	"if","else","do","while","for","case","switch","continue","break","goto",
+	"sizeof","typedef","volatile",
+};
+void list_keyword(KeyWord *head);
+KeyWord *load_keyword();
+KeyWord *ins_keyword(KeyWord *head);
+
+
+#endif
+#pragma pack(1)
+typedef struct LinkList{
+  struct Node *next;
+  int id;
+}LinkList;
+#pragma pack()
