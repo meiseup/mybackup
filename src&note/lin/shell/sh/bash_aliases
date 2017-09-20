@@ -8,8 +8,6 @@ function public_linux_alias()
 {
 	case $OSTYPE in
 		linux-gnu)
-			type -a .. &> /dev/null || alias ..="cd .."
-			type -a ... &> /dev/null || alias ...="cd ../.."
 			alias sync="${sudo}sync;${sudo}sync;${sudo}sync;${sudo}sync"
 			[ -e /dev/disk/by-label/Applications ] && [ -d "/media/Applications" ] && type mount-app &>/dev/null || alias mount-app="${sudo}mount -vw -t ntfs /dev/disk/by-label/Applications /media/Applications" 
 			[ -d "/media/tmp" ] && type umt &>/dev/null || alias umt="${sudo}umount -v /media/tmp"
@@ -24,7 +22,8 @@ function public_linux_alias()
 				type sudoe &>/dev/null || alias sudoe="${sudo}-E vim"
         [ $EUID -eq 0 ] && unalias sudoe &>/dev/null
 			fi
-			[ -x /usr/bin/notify-send ] && type alert &>/dev/null || alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"';;
+			[ -x /usr/bin/notify-send ] && type alert &>/dev/null || alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+      alias cknet="echo 'Checking the networks......';ping -c2 www.baidu.com &>/dev/null&&echo Network is OK.||echo Network is not working.";;
 	esac
 }
 
@@ -32,6 +31,8 @@ function public_linux_alias()
 function public_alias()
 {
   public_linux_alias
+  type -a .. &> /dev/null || alias ..="cd .."
+  type -a ... &> /dev/null || alias ...="cd ../.."
 	type -a md &> /dev/null || alias md="mkdir -pv" 
 	alias free="free -hmt"
 	alias ls="ls --color=auto"
@@ -45,7 +46,7 @@ function public_alias()
   alias fgrep="fgrep --color=auto"
   alias egrep="egrep --color=auto"
   alias pwd="pwd -P"
-  alias cd="cd -P"
+  [[ $TERM == "linux" || $TERM == "screen" || $TERM == "fbterm" ]] && alias cd="cd -P"
   alias du="du -h"
   alias df="df -h"
   alias cp="cp -iv"
