@@ -10,8 +10,8 @@ others="/media"
 # function mount_others()
 # {
 # 	a=`ls ${others}/$1 -a | wc -l `
-# 	[[  -e /dev/disk/by-label/$1 && -d $others/$1 &&  $a -eq 2 ]] && sudo mount -t ntfs /dev/disk/by-label/$1 ${others}/$1
-# 	[[ -e /dev/disk/by-label/Application && -d $others/$2 ]] && [ `ls ${others}/$2 -a|wc -l` -eq 2 ] && sudo mount -t ntfs /dev/disk/by-label/Application ${others}/$2
+# 	[[  -e /dev/disk/by-label/$1 && -d $others/$1 &&  $a -eq 2 ]] && SUDO mount -t ntfs /dev/disk/by-label/$1 ${others}/$1
+# 	[[ -e /dev/disk/by-label/Application && -d $others/$2 ]] && [ `ls ${others}/$2 -a|wc -l` -eq 2 ] && SUDO mount -t ntfs /dev/disk/by-label/Application ${others}/$2
 # 	unset a 
 # }
 # 
@@ -21,15 +21,15 @@ others="/media"
 # 	if [[ -n $1 && -z $2 ]];then 
 # 	case $1 in
 # 		"Others")
-# 			[ ! -d $others/$1 ] && sudo mkdir -pv $others/$1;
-# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/$1 ] && sudo mount -t ntfs /dev/disk/by-label/$1 $others/$1;;
+# 			[ ! -d $others/$1 ] && SUDO mkdir -pv $others/$1;
+# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/$1 ] && SUDO mount -t ntfs /dev/disk/by-label/$1 $others/$1;;
 # 		"App")
-# 			[ ! -d $others/$1 ] && sudo mkdir -pv $others/$1;
-# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/Application ] && sudo mount -t ntfs /dev/disk/by-label/Application $others/$1;;
+# 			[ ! -d $others/$1 ] && SUDO mkdir -pv $others/$1;
+# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/Application ] && SUDO mount -t ntfs /dev/disk/by-label/Application $others/$1;;
 # 		"xu_qiao_lin")
 # 			:;;
 # 		"TMP")
-# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/$1 ] && sudo mount -t vfat -o rw,flush,utf8=1,uid=$UID /dev/disk/by-label/$1 $others/$1;;
+# 			[ `\ls $others/$1 -a|wc -l` -eq 2 ] && [ -e /dev/disk/by-label/$1 ] && SUDO mount -t vfat -o rw,flush,utf8=1,uid=$UID /dev/disk/by-label/$1 $others/$1;;
 # 		*)
 # 			echo dir don\'t allow,dir only allow is Others or App;;
 # 	esac
@@ -40,9 +40,9 @@ others="/media"
 # 	
 # 
 # #	if [[ ${others}/$1 == "${others}/Others" && ! -d ${others}/$1 ]] ; then
-# #		sudo mkdir -pv ${others}/$1
+# #		SUDO mkdir -pv ${others}/$1
 # #	elif [[ ${others}/$1 == "${others}/App" && ! -d ${others}/$2 ]] ; then
-# #		sudo mkdir -pv ${others}/$2
+# #		SUDO mkdir -pv ${others}/$2
 # #	else {
 # #		echo path error
 # #		return;
@@ -58,8 +58,8 @@ others="/media"
 		[[ -n $1 && -n $2 ]] && {
 			for i in ${1,2};do
 				case $i in
-					"Others") [ ! -d $others/$1 ] && sudo mkdir -p $others/$1;;
-					"Applications") [ ! -d $others/$1 ] && sudo mkdir -p $others/$1;;
+					"Others") [ ! -d $others/$1 ] && SUDO mkdir -p $others/$1;;
+					"Applications") [ ! -d $others/$1 ] && SUDO mkdir -p $others/$1;;
 					"*")  echo "device will mounted $others/tmp...."
 				esac
 			done
@@ -68,18 +68,18 @@ others="/media"
 		[[ -n $1 && -z $2 ]] && {
 		case $1 in
 			"Others") 
-				[ ! -d $others/$1 ] && sudo mkdir -p $others/$1 || {
-				[ `\ls -a $others/$1|wc -l` -eq 2 ] && sudo mount /dev/disk/by-label/Others $others/$1||echo "devices already mouted..."
+				[ ! -d $others/$1 ] && SUDO mkdir -p $others/$1 || {
+				[ `\ls -a $others/$1|wc -l` -eq 2 ] && SUDO mount /dev/disk/by-label/Others $others/$1||echo "devices already mouted..."
 			};;
 				#[ -d $others/$1 ] && 
 			"Applications") 
-				[ ! -d $others/$1 ] && sudo mkdir -p $others/$1;
-				[ `\ls -a $others/$1|wc -l` -eq 2 ] && sudo mount /dev/disk/by-label/$1 $others/$1||echo "devices already mouted...";;
+				[ ! -d $others/$1 ] && SUDO mkdir -p $others/$1;
+				[ `\ls -a $others/$1|wc -l` -eq 2 ] && SUDO mount /dev/disk/by-label/$1 $others/$1||echo "devices already mouted...";;
 			"*") 
-				[ ! -d $others/tmp ]&& sudo mkdir $others/tmp || echo "device will mounted $others/tmp....";
-				[ `\ls -a $others/tmp|wc -l` -eq 2 ] && sudo mount /dev/disk/by-label/$1 $others/tmp||echo "devices already mouted...";;
+				[ ! -d $others/tmp ]&& SUDO mkdir $others/tmp || echo "device will mounted $others/tmp....";
+				[ `\ls -a $others/tmp|wc -l` -eq 2 ] && SUDO mount /dev/disk/by-label/$1 $others/tmp||echo "devices already mouted...";;
 		esac
-		} || [[ -n $1&& -n $2 ]]&&[[ $1 == "Others"&&$2 == "Application" ]]&&[[ `\ls -a $others/$1|wc -l` -eq 2&&`\ls -a $others/$2|wc -l` -eq 2 ]]&&sudo mount /dev/disk/by-label/$1 $others/$1;sudo mount /dev/disk/by-label/$2 $others/$2
+		} || [[ -n $1&& -n $2 ]]&&[[ $1 == "Others"&&$2 == "Application" ]]&&[[ `\ls -a $others/$1|wc -l` -eq 2&&`\ls -a $others/$2|wc -l` -eq 2 ]]&&SUDO mount /dev/disk/by-label/$1 $others/$1;SUDO mount /dev/disk/by-label/$2 $others/$2
 	} || echo No such device....
 
 }
@@ -101,8 +101,8 @@ function check_env()
 			*)
 				tmp-mount=/mnt
 		esac
-		[ ! -d $1 ] && sudo mkdir -p /media/$1;
-		[[ -n $2  &&  ! -d $2 ]] && sudo mkdir -p /media/$2;
+		[ ! -d $1 ] && SUDO mkdir -p /media/$1;
+		[[ -n $2  &&  ! -d $2 ]] && SUDO mkdir -p /media/$2;
 	
 		[ `\ls -a /media/$1|wc -l` -ne 2 ] && { echo "device  is mounted /media/$1";exit 0; }
 	else 

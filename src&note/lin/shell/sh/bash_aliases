@@ -1,29 +1,46 @@
 #!/bin/bash -
-tmp=/home/external/sh
-[ -r $tmp/check-os.sh ] && source $tmp/check-os.sh
-[ $UID -eq 0 ] && sudo= || sudo="sudo "
+[ -r $sh_dir/ck_os.sh ] && source $sh_dir/ck_os.sh
 
-#function 
+#functions
+function sys_alias()
+{
+  # 熄屏，空白屏幕（blank screen）
+  type sys_bs &>/dev/null || alias sys_bs='xset dpms force off'
+
+  # 锁屏
+  type lock &>/dev/null || alias lock='xtrlock&'
+
+  # 系统挂起，睡眠与锁屏
+  type sys_mem &>/dev/null || alias sys_mem="echo mem | ${SUDO}tee /sys/power/state &> /dev/null;sleep 1;xtrlock &"
+
+  # 电量查看
+  type capa &>/dev/null || alias capa='echo laptop capacity: $(cat /sys/class/power_supply/BAT1/capacity)%'
+}
+
 function public_linux_alias()
 {
 	case $OSTYPE in
 		linux-gnu)
-			alias sync="${sudo}sync;${sudo}sync;${sudo}sync;${sudo}sync"
-			[ -e /dev/disk/by-label/Applications ] && [ -d "/media/Applications" ] && type mount-app &>/dev/null || alias mount-app="${sudo}mount -vw -t ntfs /dev/disk/by-label/Applications /media/Applications" 
-			[ -d "/media/tmp" ] && type umt &>/dev/null || alias umt="${sudo}umount -v /media/tmp"
-			[ -d "/media/Applications" ] && type uma &>/dev/null || alias uma="${sudo}umount -v /media/Applications"
-			[ -d "/media/Others" ] && type umo &>/dev/null || alias umo="${sudo}umount -v /media/Others"
-			type cs &> /dev/null || alias cs="${sudo}sync;${sudo}sync;${sudo}sync;${sudo}shutdown -hf now"
-			type rs &>/dev/null || alias rs="${sudo}sync;${sudo}sync;${sudo}sync; ${sudo}reboot now"
+      [ -r $tmp/fun/app_aliases.sh ] && source $tmp/fun/app_aliases.sh
+      [ -r $tmp/fun/sys_light.sh ] && . $tmp/fun/sys_light.sh
+      sys_alias
+			alias sync="${SUDO}sync;${SUDO}sync;${SUDO}sync;${SUDO}sync"
+			[ -e /dev/disk/by-label/Applications ] && [ -d "/media/Applications" ] && type mount-app &>/dev/null || alias mount-app="${SUDO}mount -vw -t ntfs /dev/disk/by-label/Applications /media/Applications" 
+			[ -d "/media/tmp" ] && type umt &>/dev/null || alias umt="${SUDO}umount -v /media/tmp"
+			[ -d "/media/Applications" ] && type uma &>/dev/null || alias uma="${SUDO}umount -v /media/Applications"
+			[ -d "/media/Others" ] && type umo &>/dev/null || alias umo="${SUDO}umount -v /media/Others"
+			type cs &> /dev/null || alias cs="${SUDO}sync;${SUDO}sync;${SUDO}sync;${SUDO}shutdown -hf now"
+			type rs &>/dev/null || alias rs="${SUDO}sync;${SUDO}sync;${SUDO}sync; ${SUDO}reboot now"
 			if [ "$TERM" == "linux" ] && ps aux|grep -v grep|grep fbterm &>/dev/null;then 
 				alias vim="TERM=fbterm vim";
-				type sudoe &>/dev/null || alias sudoe="TERM=fbterm ${sudo}-E vim"
+				type SUDOe &>/dev/null || alias SUDOe="TERM=fbterm ${SUDO}-E vim"
 			else 
-				type sudoe &>/dev/null || alias sudoe="${sudo}-E vim"
-        [ $EUID -eq 0 ] && unalias sudoe &>/dev/null
+				type SUDOe &>/dev/null || alias SUDOe="${SUDO}-E vim"
+        [ $EUID -eq 0 ] && unalias SUDOe &>/dev/null
 			fi
 			[ -x /usr/bin/notify-send ] && type alert &>/dev/null || alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-      alias cknet="echo 'Checking the networks......';ping -c2 www.baidu.com &>/dev/null&&echo Network is OK.||echo Network is not working.";;
+      type -a eps &>/dev/null || alias eps='ps aux|grep -v grep|grep -i '
+      type -a cknet &>/dev/null || alias cknet="echo 'Checking the networks......';ping -c2 www.baidu.com &>/dev/null&&echo Network is OK.||echo Network is not working.";;
 	esac
 }
 
@@ -63,9 +80,10 @@ function other_alias()
 {
 	case $OS in
 		Arch*)
-			type update-grub &>/dev/null || alias update-grub="${sudo}grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg";;
+			type update-grub &>/dev/null || alias update-grub="${SUDO}grub-mkconfig -o /boot/efi/EFI/Arch/grub/grub.cfg"
+      alias skill="${SUDO}pkill X";;
 		Ubuntu*|Fedora*)
-			type sl &> /dev/null || alias sl="skill -u ";;
+			alias skill="skill -u $USER";;
 	esac
 }
 
@@ -78,15 +96,15 @@ function pacman_alias()
 	type pacfs &>/dev/null || alias pacfs="pacman -Fs"
 	case $OS in
 		Arch*|Fedo*)
-			type paci &>/dev/null || alias paci="${sudo}pacman -S --needed "
-			type pacr &>/dev/null || alias pacr="${sudo}pacman -Rn"
-			type pacu &>/dev/null || alias pacu="${sudo}pacman -Syyu"
-			type pacfu &> /dev/null || alias pacfu="${sudo}pacman -Fy";;
+			type paci &>/dev/null || alias paci="${SUDO}pacman -S --needed "
+			type pacr &>/dev/null || alias pacr="${SUDO}pacman -Rn"
+			type pacu &>/dev/null || alias pacu="${SUDO}pacman -Syyu"
+			type pacfu &> /dev/null || alias pacfu="${SUDO}pacman -Fy";;
 		msys)
 			type pacu &> /dev/null || alias pacu="pacman -Syyu"
 			type paci &> /dev/null || alias paci="pacman -S --needed"
-			type pacfu &> /dev/null || alias pacfu="pacman -Fy"
 			type pacr &> /dev/null || alias pacr="pacman -Rn";;
+			#type pacfu &> /dev/null || alias pacfu="pacman -Fy"
 	esac
 }
 
@@ -100,18 +118,18 @@ function package_manage()
 			:;;
 		Fedora*)
 			pacman_alias
-			type dnfi &>/dev/null || alias dnfi="${sudo}dnf install"
+			type dnfi &>/dev/null || alias dnfi="${SUDO}dnf install"
 			type dnfs &>/dev/null || alias dnfs="dnf search"
-			type dnfr &>/dev/null || alias dnfr="${sudo}dnf remove"
-			type dnfu &>/dev/null || alias dnfu="${sudo}dnf update";;
+			type dnfr &>/dev/null || alias dnfr="${SUDO}dnf remove"
+			type dnfu &>/dev/null || alias dnfu="${SUDO}dnf update";;
 		Gentoo*)
-      type emeri &>/dev/null || alias emeri="${sudo}emerge --ask"
+      type emeri &>/dev/null || alias emeri="${SUDO}emerge --ask"
       type emers &>/dev/null || alias emers="emerge --search"
 			;;
 		Ubuntu*)
-			type apti &>/dev/null || alias apti="${sudo}apt-get install"
-			type aptr &>/dev/null || alias apti="${sudo}apt-get install"
-			type apts &>/dev/null || alias apti="${sudo}apt-get install";;
+			type apti &>/dev/null || alias apti="${SUDO}apt-get install"
+			type aptr &>/dev/null || alias aptr="${SUDO}apt-get remove"
+			type apts &>/dev/null || alias apts="apt-cache search";;
 		OpenSUSE*)
 			:;;
 		msys)
@@ -124,4 +142,5 @@ other_alias
 public_alias
 package_manage
 #
-unset -f other_alias package_manage pacman_alias public_linux_alias public_alias
+unset -f other_alias package_manage pacman_alias public_linux_alias public_alias sys_alias
+

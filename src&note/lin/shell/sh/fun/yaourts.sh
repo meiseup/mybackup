@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: pm_mem.sh
+#          FILE: yaourts.sh
 # 
-#         USAGE: ./pm_mem.sh 
+#         USAGE: ./yaourts.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,15 @@
 #         NOTES: ---
 #        AUTHOR: YOUR NAME (), 
 #  ORGANIZATION: 
-#       CREATED: 2017年09月19日 23:50
+#       CREATED: 2017年09月28日 08:38
 #      REVISION:  ---
 #===============================================================================
 
-
-#xset dpms force off;
-su -c 'echo mem > /sys/power/state' ;sleep 2 ;xtrlock &
-# sleep 1
-
+function yaourts()
+{
+  if [ $# -eq 1 ];then
+    git clone https://aur.archlinux.org/$1.git
+    [ -d `basenme $1` ] && { pushd `basename $1` && makepkg -srCci; } 
+  fi
+}
 

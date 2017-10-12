@@ -29,8 +29,8 @@ tmp=$1
 	jdk=$tmp/Java_Web/jdk7u80
 	jre=$jdk/jre
 	dest=/usr/local/bin
-  #for i in $jdk/bin/* $jre/bin/*;do sudo ln -sv $i $dest/$i;done
-  #for i in "$jdk/bin/*" "$jre/bin/*";do readlink $dest/`basename $i` &>/dev/null || sudo ln -sv $i $dest/;done;
-	for i in $jdk/bin/* $jre/bin/*;do [ -L $dest/${i##*/} ] || sudo ln -sv $i $dest/;done;
+  #for i in $jdk/bin/* $jre/bin/*;do SUDO ln -sv $i $dest/$i;done
+  #for i in "$jdk/bin/*" "$jre/bin/*";do readlink $dest/`basename $i` &>/dev/null || SUDO ln -sv $i $dest/;done;
+	for i in $jdk/bin/* $jre/bin/*;do [ -L $dest/${i##*/} ] || SUDO ln -sv $i $dest/;done;
 	unset jdk jre dest
 }

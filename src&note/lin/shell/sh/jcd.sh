@@ -17,10 +17,15 @@
 #      REVISION:  ---
 #===============================================================================
 
-dir="`echo $PWD|sed 's/\// /g'`"
-for i in `echo $PWD|sed 's/\// /g'`;do
-  if [[ "x$1" == "x" ]];then echo "error,can not cd the dir.";exit;fi
-  [[ "$1" == "$i" ]] && pushd "/$i";
-done
+
+function jcd()
+{
+  tmp=$PWD
+  for i in `echo ${PWD:-$OLDPWD}|sed 's/\// /g'`;do
+    if [[ "x$1" == "x" ]];then echo "error,can not cd the dir.";exit;fi
+    [[ "$1" == "$i" ]] && pushd "/$i";
+  done
+}
 
 unset $dir
+

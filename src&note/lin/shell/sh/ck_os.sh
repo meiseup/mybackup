@@ -1,9 +1,9 @@
-#!/bin/bash -
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: check-os.sh
+#          FILE: ck_os.sh
 # 
-#         USAGE: ./check-os.sh 
+#         USAGE: ./ck_os.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,9 +13,10 @@
 #         NOTES: ---
 #        AUTHOR: YOUR NAME (), 
 #  ORGANIZATION: 
-#       CREATED: 2017年05月04日 15:29
+#       CREATED: 2017年10月12日 14:26
 #      REVISION:  ---
 #===============================================================================
+
 function check-os()
 {
 	if [[ -z "${OS}" && "${SHELL}" == "/bin/bash" ]];then
@@ -27,9 +28,12 @@ function check-os()
 
 check-os
 
-if [ "${OSTYPE}" == "linux-gnu" ];then
+case $OSTYPE in
+  msys|cygwin)
+		OS="msys";;
+  linux-gnu)
   if [[ -f /etc/redhat-release && `grep -io Fedora /etc/redhat-release` == "Fedora" ]];then
-    OS="Fedora"
+    OS="Fedora Linux"
   elif [[ -f /etc/issue && `grep -io Arch /etc/issue` == "Arch" ]];then
     OS="Arch Linux"
   elif [[ -f /etc/issue && `grep -io Gentoo /etc/issue` == "Gentoo" ]];then
@@ -37,9 +41,9 @@ if [ "${OSTYPE}" == "linux-gnu" ];then
   else 
     OS="Other Linux"
   fi
-	elif [ "$OSTYPE" == "msys" ];then
-		OS="msys"
-fi
+  ;;
+esac
 
 export OS
 unset -f check-os
+

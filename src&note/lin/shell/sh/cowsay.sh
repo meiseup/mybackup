@@ -17,11 +17,11 @@
 #      REVISION:  ---
 #===============================================================================
 cow_dir=
-#app_install="sudo dnf install -y";;
-#app_install="sudo pacman -S --needed";;
-#app_install="sudo dnf install -y";;
+#app_install="SUDO dnf install -y";;
+#app_install="SUDO pacman -S --needed";;
+#app_install="SUDO dnf install -y";;
 
-[ -f /home/external/sh/check-os.sh ] && source /home/external/sh/check-os.sh
+[ -f /home/external/sh/ck_os.sh ] && source /home/external/sh/ck_os.sh
 case $OS in
   Arch*)
     cow_dir=/usr/share/cows;;
@@ -48,7 +48,5 @@ function cow_say()
 cow_say
 
 unset cow_dir 
-unset -f check_cowsay
 unset -f cow_say
-unset -f check_lolcat
 
