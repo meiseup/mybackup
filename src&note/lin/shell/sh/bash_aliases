@@ -1,5 +1,5 @@
 #!/bin/bash -
-[ -r $sh_dir/ck_os.sh ] && source $sh_dir/ck_os.sh
+[ -r ${SH_DIR}/ck_os.sh ] && source ${SH_DIR}/ck_os.sh
 
 #functions
 function sys_alias()
@@ -21,8 +21,8 @@ function public_linux_alias()
 {
 	case $OSTYPE in
 		linux-gnu)
-      [ -r $tmp/fun/app_aliases.sh ] && source $tmp/fun/app_aliases.sh
-      [ -r $tmp/fun/sys_light.sh ] && . $tmp/fun/sys_light.sh
+      [ -r ${SH_DIR}/fun/app_aliases.sh ] && source ${SH_DIR}/fun/app_aliases.sh
+      [ -r ${SH_DIR}/fun/sys_light.sh ] && . ${SH_DIR}/fun/sys_light.sh
       sys_alias
 			alias sync="${SUDO}sync;${SUDO}sync;${SUDO}sync;${SUDO}sync"
 			[ -e /dev/disk/by-label/Applications ] && [ -d "/media/Applications" ] && type mount-app &>/dev/null || alias mount-app="${SUDO}mount -vw -t ntfs /dev/disk/by-label/Applications /media/Applications" 

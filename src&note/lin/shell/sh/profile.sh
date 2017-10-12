@@ -1,10 +1,10 @@
-#!/bin/bash -xv
+#!/bin/bash -
 
 #dir="$(cd -P $(dirname $0);pwd)"
-dir= #"$(cd -P $(readlink -f .);pwd)"
+SH_DIR= #"$(cd -P $(readlink -f .);pwd)"
 #dir="$(dirname $(readlink -f $dir))"
-sh_dir="${dir:-/home/external/sh}"
-export sh_dir
+SH_DIR="${SH_DIR:-/home/external/sh}"
+export SH_DIR
 
 [ $EUID -ne 0 ] && SUDO='sudo ' || SUDO=
 export SUDO
@@ -53,7 +53,7 @@ export HISTCONTROL="ignoreboth:erasedups"
 #export HISTIGNORE="&:[ ]*"
 #export HISTIGNORE='sync:history[ \t]*:du[ \t]*:df:free:ll:ll[ \t]*:ls:ls[ \t]*:top:ps:exit'
 
-[ -r $sh_dir/ck_os.sh ] && source $sh_dir/ck_os.sh
+[ -r $SH_DIR/ck_os.sh ] && source $SH_DIR/ck_os.sh
 
 #
 case $OS in
@@ -66,19 +66,19 @@ case $OS in
 
 		#
     *Linux*)
-		[ -r "${sh_dir}/bash_aliases" ] && source ${sh_dir}/bash_aliases
+		[ -r "${SH_DIR}/bash_aliases" ] && source ${SH_DIR}/bash_aliases
 
-		[ -r /usr/bin/dircolors ] && [ -r ${sh_dir}/dircolors ] && eval "$(dircolors -b ${sh_dir}/dircolors)"
+		[ -x /usr/bin/dircolors ] && [ -r ${SH_DIR}/dircolors ] && eval "$(dircolors -b ${SH_DIR}/dircolors)"
 
-		[ -r ${sh_dir}/genary.sh ] && source ${sh_dir}/genary.sh
+		[ -r ${SH_DIR}/genary.sh ] && source ${SH_DIR}/genary.sh
 
-		[ -r ${sh_dir}/cowsay.sh ] && source ${sh_dir}/cowsay.sh
+		[ -r ${SH_DIR}/cowsay.sh ] && source ${SH_DIR}/cowsay.sh
 
-		[ -r ${sh_dir}/set_user_path.sh ] && source ${sh_dir}/set_user_path.sh
+		#[ -r ${SH_DIR}/set_user_path.sh ] && source ${SH_DIR}/set_user_path.sh
 
-		#[ -x ${sh_dir}/java.sh ] && source ${sh_dir}/java.sh
+		#[ -x ${SH_DIR}/java.sh ] && source ${SH_DIR}/java.sh
 
-		CDPATH=".:~/Desktop:/media/Others:/media/Applications:/home/external"
+		CDPATH=".:$HOME/Desktop:/media/Others:/media/Applications:/home/external"
 		back="/media/Others/Backup/lin"
 		;;
 esac
